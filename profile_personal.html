@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/assets/icon/Bia2band1.svg" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css"
+        integrity="sha512-KYEnM30Gjf5tMbgsrQJsR0FSpufP9S4EiAYi168MvTjK6E83x3r6PTvLPlXYX350/doBXmTFUEnJr/nCsDovuw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css"
+        integrity="sha512-Hp+WwK4QdKZk9/W0ViDvLunYjFrGJmNDt6sCflZNkjgvNq9mY+0tMbd6tWMiAlcf1OQyqL4gn2rYp7UsfssZPA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/svg-with-js.min.css"
+        integrity="sha512-JgLoPAy0vc/kYzFhTyokdFDtyTdsU5TiJQ1zzMHL4aL0QnDdWGC5CnG3FZ7eRhncidUaFoqB7W/Hbs8X0cvzXQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src="js/utils.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/media.js"></script>
+    <script src="js/business.js"></script>
+    <title>Bia2Band</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light  navbar-custom nav">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#First">
+                <img class="pl-10" src="assets/icons/Bia2band1.svg" alt="bia2band">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto md-12" style="  width: 72%;"> <!-- Aligns links to the right -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">صفحه نخست</a>
+                    </li>
+                    <li class='nav-item dropdown '>
+                        <a class="nav-link dropdown-toggle active" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            داشبورد
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li class='dropdown-item'>
+                                <a href="admin_dashboard.html" onclick="" class="aMenu">
+                                    پنل من
+                                </a>
+                            </li>
+                            <li class='dropdown-item'>
+                                <a href="#MyPersonalInfo" onclick="" class="aMenu">مشخصات شخصی
+                                    من
+                                </a>
+                            </li>
+                            <li class='dropdown-item'> <a href="#contactWithMe" class="aMenu">ارتباط با من</a></li>
+                            <li class='dropdown-item'> <a href="#aboutMe" class="aMenu">درباره من</a></li>
+                            <li class='dropdown-item'> <a href="#spskill" class="aMenu">اطلاعات تخصصی من</a></li>
+                            <li class='dropdown-item'> <a href="#compaleteIfno" class="aMenu">اطلاعات تکمیلی من</a>
+                            </li>
+                            <li class='dropdown-item'> <a href="#sampleWork" class="aMenu">نمونه کارها</a></li>
+                            <li class='dropdown-item'> <a href="profile_view.html" class="aMenu">نمای کلی
+                                    پروفایل</a></li>
+                            <li class='dropdown-item'><a href="profile.html" class="aMenu">کسب و کار من</a></li>
+                        </ul>
+                    </li>
+                    <li class='nav-item justShowOnMobile'>
+                        <a class='nav-link' href='profile.html'>مدیریت کسب و کار</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>هم بندی ها</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='business.html'>کسب و کارها</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>بلاگ</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='aboutMe.html'>درباره ما</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>تماس با ما</a>
+                    </li>
+
+                </ul>
+                <!-- Search icon could be added here using an input group or similar component -->
+                <div class='d-flex mx-auto nav-item'>
+                    <span role="img" aria-label="user" class="anticon anticon-user mx-2 text-lg"><svg
+                            viewBox="64 64 896 896" focusable="false" data-icon="user" width="1em" height="1em"
+                            fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg></span>
+                    <a class='nav-link' id="usernameInfo" style="padding: 0;" href='#'><a class='nav-link'
+                            id="usernameInfo" style="padding: 0;" href='login.html'>ورود/ثبت نام</a></a>
+                    <span role="img" aria-label="user" class="anticon anticon-user ms-2 text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" />
+                        </svg>
+
+
+                    </span>
+                    <a class='nav-link ms-1' onclick="logout()" style="padding: 0;" href='#'>خروج</a>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </nav>
+    <div class="container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8" id="root">
+
+
+        <div class="row mt-5 mx-auto">
+            <div class="col-md-2 mobile_display_none ">
+                <ul class="list-unstyled sidebar-costum">
+                    <li class="mb-3">
+                        <img class="" src="assets/icons/menu.svg" alt="bia2band">
+                    </li>
+                    <li class="pt-5 nav-link active">
+                        <svg viewBox="64 64 896 896" focusable="false" class="sidebarToggleDesktop" data-icon="user"
+                            width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg>
+                        <span class="sidebarToggleDesktop">
+                            <a href="#MyPersonalInfo" onclick="" class="aMenu">مشخصات شخصی من</a>
+                        </span>
+                        <a href="#MyPersonalInfo" class="sidebarToggleMobile aMenu">
+                            <i class="fa-solid fa-user fa-2x" title="مشخصات شخصی من"></i>
+                        </a>
+
+                    </li>
+                    <li class="pt-5 nav-link">
+                        <svg viewBox="64 64 896 896" focusable="false" class="sidebarToggleDesktop" data-icon="user"
+                            width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg>
+                        <span class="sidebarToggleDesktop">
+
+                            <a href="#contactWithMe" class="aMenu">ارتباط با من</a>
+                        </span>
+                        <a href="#contactWithMe" class="sidebarToggleMobile aMenu">
+                            <i class="fa-solid fa-address-book fa-2x " title="ارتباط با من"></i>
+                        </a>
+                    </li>
+                    <li class="pt-5 nav-link">
+                        <svg viewBox="64 64 896 896" focusable="false" class="sidebarToggleDesktop" data-icon="user"
+                            width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg>
+                        <span class="sidebarToggleDesktop">
+                            <a href="#aboutMe" class="aMenu">درباره من</a>
+
+                        </span>
+                        <a href="#aboutMe" class="sidebarToggleMobile aMenu">
+                            <i class="fa-solid fa-user-secret fa-2x" title="درباره من"></i>
+                        </a>
+
+                    </li>
+                    <li class="pt-5 nav-link">
+                        <svg viewBox="64 64 896 896" class="sidebarToggleDesktop" focusable="false" data-icon="user"
+                            width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg>
+                        <span class="sidebarToggleDesktop">
+                            <a href="#spskill" class="aMenu">اطلاعات تخصصی من</a>
+                        </span>
+
+                        <a href="#spskill" class="sidebarToggleMobile aMenu">
+                            <i class="fa-solid fa-circle-info fa-2x" title="اطلاعات تخصصی من"></i>
+                        </a>
+
+
+                    </li>
+                    <li class="pt-5 nav-link">
+                        <svg viewBox="64 64 896 896" class="sidebarToggleDesktop" focusable="false" data-icon="user"
+                            width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg>
+                        <span class="sidebarToggleDesktop">
+                            <a href="#compaleteIfno" class="aMenu">اطلاعات تکمیلی من</a>
+
+                        </span>
+                        <a href="#compaleteIfno" class="sidebarToggleMobile aMenu">
+                            <i class="fa-solid fa-sitemap fa-2x " title="اطلاعات تکمیلی من"></i>
+                        </a>
+
+                    </li>
+                    <li class="pt-5 nav-link">
+                        <svg viewBox="64 64 896 896" class="sidebarToggleDesktop" focusable="false" data-icon="user"
+                            width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg>
+                        <span class="sidebarToggleDesktop">
+                            <a href="#sampleWork" class="aMenu">نمونه کارها</a>
+
+                        </span>
+                        <a href="#sampleWork" class="sidebarToggleMobile aMenu">
+                            <i class="fa-solid fa-briefcase fa-2x " title="نمونه کارها"></i>
+                        </a>
+                    </li>
+                    <li class="pt-5 nav-link">
+                        <svg viewBox="64 64 896 896" class="sidebarToggleDesktop" focusable="false" data-icon="user"
+                            width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg>
+                        <span class="sidebarToggleDesktop">
+                            <a href="profile_view.html" class="aMenu">نمای کلی پروفایل</a>
+                        </span>
+                        <a href="#oeveralView" class="sidebarToggleMobile aMenu">
+                            <i class="fa-solid fa-user-pen fa-2x " title="نمای کلی پروفایل"></i>
+                        </a>
+
+                    </li>
+                    <li class="pt-5 nav-link">
+                        <svg class="sidebarToggleDesktop" viewBox="64 64 896 896" focusable="false" data-icon="user"
+                            width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg>
+                        <span class="sidebarToggleDesktop">
+                            <a href="profile.html" class="aMenu">کسب و کار من</a>
+
+                        </span>
+                        <a href="profile.html" class="sidebarToggleMobile aMenu">
+                            <i class="fa-solid fa-person-chalkboard fa-2x " title="کسب و کار من"></i>
+                        </a>
+
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-10  col-sm-12">
+                <div class="rounded-lg p-1 bg-white rounded-3xl ">
+                    <div class="row">
+                        <div class="col-12 mt-n5 mx-auto">
+                            <div id="personalBackground"
+                                class="pt-5 rounded-lg shadow-lg bg-white mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders -mt-16 sticky backgound_banner2 height_16rem">
+                                <i class="fa-regular fa-pen-to-square me-4 fa-2x float-end hover-shadow"
+                                    style="color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+
+                                <div class="pt-5  d-flex margin_top_6rem">
+
+
+                                    <img class="mt-3 profile_banner rounded-circle ProfileImageId"
+                                        id="personalProfileImageId" src="assets/images/avatar.png">
+                                    <input type="hidden" id="businessBackgroundId" />
+                                    <input type="hidden" id="businessProfileId" />
+                                    <i class="fa-regular margin_left_right_for_edit_business_profile fa-pen-to-square fa-2x hover-shadow"
+                                        style="color: white;" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal2"></i>
+
+                                </div>
+
+                                <!-- Modal invatec code -->
+                                <div class="modal fade" id="ConfirmPopUp" tabindex="-1"
+                                    aria-labelledby="ConfirmPopUpModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="ConfirmPopUpModal">
+                                                    تاییدیه
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">انصراف</button>
+                                                <button type="button" id="ConfirmPopUpBtn" onclick=""
+                                                    class="btn btn-primary">تایید</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">تغییر بکگراند</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="#" enctype="multipart/form-data"
+                                                id="businessUploadBackground">
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="file" name="file" id="formFile">
+                                                </div>
+                                                <input type="hidden" name="id" />
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">انصراف</button>
+                                                    <button type="button"
+                                                        onclick="updateBackgroundForm($(this),$('#businessUploadBackground')[0])"
+                                                        class="btn btn-primary">تغییر</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="generalWarning" tabindex="-1"
+                                    aria-labelledby="generalWarningW" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="generalWarningW">هشدار</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body" id="generalWarningMsg">
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">انصراف</button>
+                                                <button id="generalConfirmBtt" type="button"
+                                                    onclick="updateBackgroundForms($(this),$('#businessUploadBackground')[0])"
+                                                    class="btn btn-primary">تغییر</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel2">تغییر نمایه</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="#" enctype="multipart/form-data"
+                                                id="businessUploadProfile">
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="file" name="file" id="formFile">
+                                                </div>
+                                                <input type="hidden" name="id" id="profileImageId" />
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">انصراف</button>
+                                                    <button type="button"
+                                                        onclick="updateProfileForm($(this),$('#businessUploadProfile')[0])"
+                                                        class="btn btn-primary">تغییر</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- media skill form -->
+                                <div class="modal fade" id="skillMediaOverview" tabindex="-1"
+                                    aria-labelledby="skillMedaiModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="skillMedaiModal">افزودن ویدیو/تصویر
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="#" enctype="multipart/form-data"
+                                                id="skillMediaForm">
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="file" name="file" id="formFile2">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">انصراف</button>
+                                                    <button type="button"
+                                                        onclick="addMediaFormTOSkill($(this),$('#skillMediaForm')[0])"
+                                                        class="btn btn-primary">اپلود</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- upload media answer -->
+                                <div class="modal fade" id="anserMediaOverview" tabindex="-1"
+                                    aria-labelledby="anserMediaOverviewModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="anserMediaOverviewModal">افزودن
+                                                    ویدیو/تصویر
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="#" enctype="multipart/form-data"
+                                                id="ansMediaForm">
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="file" name="file" id="formFile2">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">انصراف</button>
+                                                    <button type="button" id="anserMediaOverviewBtn"
+                                                        onclick="addMediaFormTOAnser($(this),answerIdd,$('#ansMediaForm')[0])"
+                                                        class="btn btn-primary">اپلود</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="MyPersonalInfo"
+                        class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-5 sticky">
+                        <div class="producer-title mt-4_costum">
+                            <h3
+                                class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                                مشخصات شخصی من
+                            </h3>
+
+                            <span class="alert alert-danger " id="userConfirmedNot" role="alert"
+                                style="display: none;font-size: 10px;">
+                                در انتظار تایید ادمین
+                            </span>
+                            <span class="alert alert-success " id="userConfirmed" role="alert"
+                                style="display: none;font-size: 10px;">
+                                تایید شده برای نمایش
+                            </span>
+
+                        </div>
+                        <div class="col-md-12 mt-4">
+
+                            <div class="row">
+                                <div class="col-md-7 col-xs-12">
+                                    <div class="form-group w_75_costum">
+                                        <label for="userFirstLastName" class="iranYekanLightBold">نام</label>
+                                        <input type="text" class="form-control iranYekanLight inputHeight"
+                                            id="userComplateName" placeholder="نام">
+                                        <input type="hidden" name="userId" id="userId" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5 mx-auto col-xs-12">
+                                    <div class="form-group w_75_costum">
+                                        <label class="iranYekanLightBold " for="profileEmail">ایمیل </label>
+                                        <input type="text" class="form-control iranYekanLight inputHeight"
+                                            id="profileEmail" placeholder="ایمیل">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row mt-5_costom">
+                                <div class="col-md-7 col-xs-12">
+                                    <div class="form-group w_75_costum">
+                                        <label for="birthday" class="iranYekanLightBold">سال تولد</label>
+                                        <select
+                                            class="form-select form-control  rounded-end-3 text-gray-400 inputHeight"
+                                            aria-label="Filter select" id="brithYear">
+                                            <option selected>
+                                                --
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5 mt-5_mobile mx-auto col-xs-12">
+                                    <div class="form-group w_75_costum">
+                                        <label class="iranYekanLightBold " for="userPhone">شماره تماس </label>
+                                        <input type="text" class="form-control iranYekanLight inputHeight"
+                                            id="userPhone" placeholder="شماره تماس">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row mt-5_costom">
+                                <div class="col-md-7 col-xs-12">
+                                    <div class="form-group w_75_costum">
+                                        <label for="cityOption" class="iranYekanLightBold">محل سکونت</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text text-gray-400 rounded-start-3"
+                                                id="basic-addon1">
+                                                <i class="fa-solid fa-location-dot text-gray-400"></i>
+                                            </span>
+                                            <select
+                                                class="form-select form-control border-start-0 rounded-end-3 text-gray-400 inputHeight"
+                                                aria-label="Filter select" id="cityOption">
+                                                <option selected>
+                                                    نام شهر
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <div class="d-flex mt-5 form-group">
+                                <button type="button" onclick="updatePersonINfo($(this))"
+                                    class="btn btn-outline-secondary float-start  text-sm mx-auto px-3 w-75">
+                                    <span class="p_custom px-2">
+                                        ذخیره
+                                    </span>
+                                </button>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div id="contactWithMe"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            ارتباط با من
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+
+                        <div class="row">
+                            <div class="col-md-7 padding_x_0 col-xs-12">
+                                <div class="form-group w_75_costum d-flex">
+
+                                    <input style="direction: ltr;" type="text"
+                                        class="form-control iranYekanLight inputHeight" id="twitterLink"
+                                        placeholder="https://www.twitter.com/sabach">
+                                    <i class="fa-brands mobile_display_none fa-twitter fa-2x ms-3 mt-3"></i>
+                                </div>
+
+                            </div>
+                            <div class="col-md-5 mt-3_costom padding_x_0 mx-auto col-xs-12">
+                                <div class="form-group w_75_costum d-flex">
+                                    <input style="direction: ltr;" type="text"
+                                        class="form-control iranYekanLight inputHeight" id="facebookLink"
+                                        placeholder="https://www.facebook.com/sabach">
+                                    <i class="fa-brands mobile_display_none fa-facebook-f fa-xl ms-3 mt-4"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row mt-5_costom">
+                            <div class="col-md-7 padding_x_0 col-xs-12">
+                                <div class="form-group w_75_costum d-flex">
+                                    <input style="direction: ltr;" type="text"
+                                        class="form-control iranYekanLight inputHeight" id="instagramLinkOne"
+                                        placeholder="www.instagram.com/saba_choupani/">
+                                    <i class="fa-brands mobile_display_none fa-instagram fa-2x ms-3 mt-2"
+                                        style="color: #000000;"></i>
+                                </div>
+
+                            </div>
+                            <div class="col-md-5 mt-3_costom padding_x_0 mx-auto col-xs-12">
+                                <div class="form-group w_75_costum d-flex">
+                                    <input style="direction: ltr;" type="text"
+                                        class="form-control iranYekanLight inputHeight" id="instagramLinkTwo"
+                                        placeholder="www.instagram.com/saba_choupani/">
+                                    <i class="fa-brands mobile_display_none fa-instagram fa-2x ms-3 mt-2"
+                                        style="color: #000000;"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                        <div class="d-flex mt-5_costom form-group">
+                            <button type="button" onclick="updateSocial($(this))"
+                                class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-25-costum pt-2 ">
+                                <i class="fa-solid fa-plus mobile_display_none"></i>
+                                <span class="p_custom_2 px-2">
+                                    افزودن شبکه های اجتماعی
+                                </span>
+                            </button>
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+
+                <div id="aboutMe"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            درباره من
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group w-100 d-flex">
+
+                                    <textarea placeholder=" ویژگی های شخصیتی و حرفه ی خود در این قسمت بنویسید.."
+                                        class="form-control iranYekanLight" id="aboutMesasas" rows="8"></textarea>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-10">
+
+                            </div>
+                            <div class="col-md-1 ps-0 form-group">
+                                <button type="button" "
+                                    class=" btn btn-outline-dark border-radius-1_2rem float-start text-sm mx-auto pt-2 ">
+                                    <span class=" p_custom px-2">
+                                    انصراف
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="col-md-1 form-group">
+                                <button type="button" onclick="updateAboutMe($(this))"
+                                    class="btn btn-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 ">
+                                    <span class="p_custom px-2">
+                                        ذخیره
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="spskill"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <input type="hidden" id="skillId" />
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            اطلاعات تخصصی من
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+
+                        <div class="row">
+                            <div class="col-md-7 col-xs-12">
+                                <div class="form-group w_75_costum">
+                                    <label for="categorySelect" class="iranYekanLightBold">حوزه تخصصی من</label>
+                                    <div class="input-group">
+
+                                        <select class="form-select form-control rounded-end-3 text-gray-400 inputHeight"
+                                            aria-label="Filter select"
+                                            onchange="$('#flexSwitchCheckDefault').prop('checked', false);fetchArtStyle($(this).val(),null,null);$('#mediasIdsId').val('[]');$('#skillId').val('');$('#imageSkill').empty();$('#videoSkill').empty();buildTemplateQuestion($(this).val())"
+                                            id="categorySelect">
+                                            <option>
+                                                انتخاب کنید
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-5 mx-auto col-xs-12 margin-top-1rem">
+                                <div class="form-group w_75_costum instrumnetClass">
+                                    <label for="instrumentss" class="iranYekanLightBold">ساز تخصصی</label>
+                                    <div class="input-group">
+
+                                        <select
+                                            class="form-select form-control  rounded-end-3 text-gray-400 inputHeight"
+                                            aria-label="Filter select" id="instrumentss">
+                                            <option>
+                                                انتخاب کنید
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="form-group w_75_costum artStyleClass">
+                                    <label for="artStyle" class="iranYekanLightBold">سبک</label>
+                                    <div class="input-group">
+
+                                        <select
+                                            class="form-select form-control  rounded-end-3 text-gray-400 inputHeight"
+                                            aria-label="Filter select" id="artStyle">
+                                            <option value=null>
+                                                انتخاب کنید
+                                            </option>
+                                            <option>
+                                                پاپ
+                                            </option>
+                                            <option>
+                                                جز
+                                            </option>
+                                            <option>
+                                                کانتری
+                                            </option>
+                                            <option>
+                                                رپ
+                                            </option>
+                                            <option>
+                                                راک
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row mt-5_costom">
+                            <div class="col-md-7 mt-5_costom ps-5 col-xs-12">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" onchange="updateMainSkill($(this))" type="checkbox"
+                                        id="flexSwitchCheckDefault">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">مهارت اصلی</label>
+                                </div>
+                            </div>
+                            <div class="col-md-5 mx-auto col-xs-12">
+                                <div class="form-group w_75_costum">
+                                    <label class="iranYekanLightBold " for="workExperienceYears">مدت زمان </label>
+                                    <input type="text" class="form-control iranYekanLight inputHeight"
+                                        id="workExperienceYears" placeholder="سه سال">
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-md-1 col-xs-12"></div>
+                            <div class="col-md-4 col-xs-12">
+                                <div id="videoSkill">
+                                    <!-- <div id="id1">
+                                        <i class="fa-solid fa-trash-can me-4 ms-2 mt-1  fa-1x float-end hover-shadow"
+                                            style="color: rgb(255, 255, 255);  position: absolute;  z-index: 10000;"
+                                            data-bs-toggle="modal" onclick="confirmToRemove('id1','','')"></i>
+                                        <div class="row">
+                                            <div class="ratio ratio-16x9"><iframe style="border-radius: 0.9rem;"
+                                                    src="/media/176591c5-c0a0-4748-86b9-698561aa016b" title=""
+                                                    allowfullscreen=""></iframe></div>
+                                        </div>
+                                    </div> -->
+
+                                </div>
+
+                                <div class="row mt-3">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#skillMediaOverview"
+                                        class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <span class="p_custom px-2">
+                                            افزودن ویدئو نوازندگی
+                                        </span>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2 col-xs-12"></div>
+                            <div class="col-md-4 mx-auto col-xs-12">
+                                <div id="imageSkill">
+                                    <!-- <div id="imageSkill2">
+                                        <i class="fa-solid fa-trash-can mt-1 me-4  ms-2 fa-1x float-end hover-shadow"
+                                            style="color: rgb(255, 255, 255);  position: absolute;  z-index: 10000;"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                                        <img src="/media/e85dfcde-7efb-445c-8629-9caa8ed03d6d"
+                                            style="border-radius: 0.9rem;height:11.4rem; width:100%;" title=""
+                                            allowfullscreen="">
+                                    </div> -->
+
+                                </div>
+                                <div class="row mt-3">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#skillMediaOverview"
+                                        class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <span class="p_custom px-2">
+                                            افزودن تصویر
+                                        </span>
+                                    </button>
+                                </div>
+                                <input type="hidden" name="mediaIdss" id="mediasIdsId" value=null />
+
+                            </div>
+                            <div class="col-md-1 col-xs-12"></div>
+
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-md-8"></div>
+                            <div class="col-md-2">
+                                <div class="d-flex form-group">
+                                    <button type="button" onclick="saveSkill(false)"
+                                        class="btn btn-outline-dark float-start  text-sm mx-auto px-3 w-75">
+                                        <span class="p_custom">
+                                            ذخیره
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="d-flex form-group">
+                                    <button type="button" onclick="saveSkill(true)"
+                                        class="btn btn-outline-dark float-start  text-sm mx-auto px-3 w-75 marginTop1rem">
+                                        <span class="p_custom">
+                                            افزودن
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="compaleteIfno"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            لیست تخصص ها
+                        </h3>
+                    </div>
+                    <div>
+                        <div class="row mt-3">
+                            <table class="table table-hover iranYekanLight mobile_font_size">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">حوزه تخصصی</th>
+                                        <th scope="col">سبک</th>
+                                        <th scope="col">ساز تخصصی</th>
+                                        <th scope="col">مدت زمان</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listSkillstBody">
+                                    <tr>
+                                        <td>نوازنده</td>
+                                        <td>گیتار</td>
+                                        <td>10</td>
+                                        <td class="d-flex">
+                                            <a class="nav-link" href="#">ویرایش</a>
+                                        </td>
+                                        <td>
+                                            <a class="nav-link" href="#">حذف</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>نوازنده</td>
+                                        <td>گیتار</td>
+                                        <td>10</td>
+                                        <td class="d-flex">
+                                            <a class="nav-link" href="#">ویرایش</a>
+                                        </td>
+                                        <td>
+                                            <a class="nav-link" href="#">حذف</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="compaleteIfno"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            اطلاعات تکمیلی من
+                        </h3>
+                    </div>
+                    <div id="questionsDiv">
+
+
+                    </div>
+                </div>
+                <div id="sampleWork"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            نمونه کارها
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        <div id="carouselExampleIndicators2" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row" id="workSamplesDiv">
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            توضیحات دلخواه
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group w-100 d-flex">
+
+                                    <textarea id="extraDescription"
+                                        placeholder="  اگر توضیحات خاصی مدنظرتون هست در این قسمت بنویسید.."
+                                        class="form-control iranYekanLight" id="extraInformation" rows="8"></textarea>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row mt-5_costom">
+                            <div class="col-md-2">
+
+                            </div>
+                            <div class="col-md-5 ps-5_costom  form-group">
+                                <button type="button" onclick=""
+                                    class="btn btn-outline-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 ">
+                                    <span class="p_custom px-2">
+                                        میخواهم گروه تشکیل دهم و سرپرست گروه باشم
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="col-md-2 ps-0-costum mr_right form-group">
+                                <button type="button" onclick=""
+                                    class="btn btn-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 ">
+                                    <span class="p_custom px-2">
+                                        اضافه کردن ساز
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="col-md-3 ps-0-costum mr_right2 form-group">
+                                <button type="button" onclick="updateExtraDescription($(this))"
+                                    class="btn btn-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 ">
+                                    <span class="p_custom px-2">
+                                        ذخیره توضیحات اضافه
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer p-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex">
+                                <img src="assets/icons/Bia2band1.svg" alt="guaranty-u-img" class="rounded-full"
+                                    width="50" height="50" loading="lazy">
+                                <strong class="text-xl mt-2">بیا توبند</strong>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-4 px-5">
+                            توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر
+                            از
+                            بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند ...
+                        </p>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12 ">
+                            <i class="fa fa-location-dot text-gray-400">
+
+                            </i>
+                            <b class="text-xs text-slate-500 m-2">تهران , خیابان ولی عصر , پاسداران جنوبی , خیابان
+                                مظفر , ساختمان شماره 17</b>
+                        </div>
+                        <div class="col-md-12 ">
+                            <i class="fa-solid fa-phone-flip text-gray-400"></i>
+                            <b class="text-xs text-slate-500 m-2">09125858595</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-2">
+                    <h5 class="text-xl mt-2">دسترسی سریع </h5>
+                    <ul class="list-disc text-slate-500">
+                        <li>صفحه اصلی</li>
+                        <li>راهنمای مشتریان</li>
+                        <li>ورود و ثبت نام</li>
+                        <li>بلاگ</li>
+                        <li>فروشگاه</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="text-xl mt-2">خدمات ما</h5>
+                    <ul class="list-disc text-slate-500">
+                        <li>صفحه اصلی</li>
+                        <li>راهنمای مشتریان</li>
+                        <li>ورود و ثبت نام</li>
+                        <li>بلاگ</li>
+                        <li>فروشگاه</li>
+                    </ul>
+                </div>
+                <div class="col-md-1 mt-2">
+                    <img src="assets/images/e-namad.png" alt="eNamad-img" class="rounded-lg" height="150"
+                        loading="lazy">
+                </div>
+                <div class="col-md-1 ms-5 mt-2">
+                    <img src="assets/images/samandehi.png" alt="eNamad-img" class="rounded-lg" height="150"
+                        loading="lazy">
+                </div>
+            </div>
+            <hr>
+            <div class="row rounded  border-style-footer d-flex justify-content-center align-self-end">
+                <div class="col-md-12 d-flex pt-3 justify-content-center align-self-end">
+                    <p>تمام حقوق این سایت متعلق به بیا تو بند می باشد</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+</body>
+
+</html>

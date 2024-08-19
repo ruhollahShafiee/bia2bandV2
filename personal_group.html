@@ -1,0 +1,1551 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+    <link href="css/personal_group.css" rel="stylesheet">
+    <link href="css/admin_dashboard.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/assets/icon/Bia2band1.svg" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css"
+        integrity="sha512-KYEnM30Gjf5tMbgsrQJsR0FSpufP9S4EiAYi168MvTjK6E83x3r6PTvLPlXYX350/doBXmTFUEnJr/nCsDovuw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css"
+        integrity="sha512-Hp+WwK4QdKZk9/W0ViDvLunYjFrGJmNDt6sCflZNkjgvNq9mY+0tMbd6tWMiAlcf1OQyqL4gn2rYp7UsfssZPA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/svg-with-js.min.css"
+        integrity="sha512-JgLoPAy0vc/kYzFhTyokdFDtyTdsU5TiJQ1zzMHL4aL0QnDdWGC5CnG3FZ7eRhncidUaFoqB7W/Hbs8X0cvzXQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src="js/utils.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/media.js"></script>
+    <script src="js/business.js"></script>
+    <script src="js/personal_group.js"></script>
+    <script type="module">
+        import Autocomplete from "https://cdn.jsdelivr.net/gh/lekoala/bootstrap5-autocomplete@master/autocomplete.js";
+        let access_token = getCookie("access_token");
+        if (access_token == undefined || access_token == "" || access_token == null) {
+            location.href = 'login.html';
+        }
+
+        // $("#ac-menu-1-0").attr("data-value") 
+
+        $.ajax({
+            url: "backend/api/artist/getListOfUsername",
+            method: "GET",
+            headers: {
+                Authorization: "Bearer " + access_token
+            },
+            success: function (response) {
+
+                let itemsVar = {}
+                for (let index of response) {
+                    itemsVar[index[0]] = index[1];
+                }
+                new Autocomplete(document.getElementById("autocompleteRegularInput"), {
+                    items: itemsVar,
+                    onRenderItem: (item, label) => {
+                        return item.label;
+                    },
+                });
+
+            },
+            error: function (xhr, status, error) {
+
+
+
+            }
+        });
+
+
+
+    </script>
+    <title>Bia2Band</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light  navbar-custom nav">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#First">
+                <img class="pl-10" src="assets/icons/Bia2band1.svg" alt="bia2band">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto md-12" style="  width: 72%;"> <!-- Aligns links to the right -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">صفحه نخست</a>
+                    </li>
+                    <li class='nav-item dropdown '>
+                        <a class="nav-link dropdown-toggle active" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            داشبورد
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li class='dropdown-item'>
+                                <a href="admin_dashboard.html" onclick="" class="aMenu">
+                                    پنل من
+                                </a>
+                            </li>
+                            <li class='dropdown-item'>
+                                <a href="#MyPersonalInfo" onclick="" class="aMenu">
+                                    مشخصات شخصی
+                                    من
+                                </a>
+                            </li>
+                            <li class='dropdown-item'> <a href="#contactWithMe" class="aMenu">ارتباط با من</a></li>
+                            <li class='dropdown-item'> <a href="#aboutMe" class="aMenu">درباره من</a></li>
+                            <li class='dropdown-item'> <a href="#spskill" class="aMenu">اطلاعات تخصصی من</a></li>
+                            <li class='dropdown-item'> <a href="#compaleteIfno" class="aMenu">اطلاعات تکمیلی من</a>
+                            </li>
+                            <li class='dropdown-item'> <a href="#sampleWork" class="aMenu">نمونه کارها</a></li>
+                            <li class='dropdown-item'> <a href="profile_view.html" class="aMenu">نمای کلی
+                                    پروفایل</a></li>
+                            <li class='dropdown-item'><a href="profile.html" class="aMenu">کسب و کار من</a></li>
+                        </ul>
+                    </li>
+                    <li class='nav-item justShowOnMobile'>
+                        <a class='nav-link' href='profile.html'>مدیریت کسب و کار</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>هم بندی ها</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='business.html'>کسب و کارها</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>بلاگ</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='aboutMe.html'>درباره ما</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>تماس با ما</a>
+                    </li>
+
+                </ul>
+                <!-- Search icon could be added here using an input group or similar component -->
+                <div class='d-flex mx-auto nav-item'>
+                    <span role="img" aria-label="user" class="anticon anticon-user mx-2 text-lg"><svg
+                            viewBox="64 64 896 896" focusable="false" data-icon="user" width="1em" height="1em"
+                            fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                            </path>
+                        </svg></span>
+                    <a class='nav-link' id="usernameInfo" style="padding: 0;" href='#'><a class='nav-link'
+                            id="usernameInfo" style="padding: 0;" href='login.html'>ورود/ثبت نام</a></a>
+                    <span role="img" aria-label="user" class="anticon anticon-user ms-2 text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" />
+                        </svg>
+
+
+                    </span>
+                    <a class='nav-link ms-1' onclick="logout()" style="padding: 0;" href='#'>خروج</a>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </nav>
+    <div class="container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8" id="root">
+
+
+        <div class="row mt-5 mx-auto">
+
+            <div class="col-md-4 px-4">
+                <div class="row rounded-lg mt-3 px-0 bg-white rounded-3xl"
+                    style="min-height: 23rem !important;   border: solid #b3b4b5 1px;">
+                    <div class="col-12 mx-0 px-0">
+                        <div id="personalBackground"
+                            class="mx-auto p-8 rounded-3xl_imge borders sticky backgound_banner2 height_11rem">
+                            <div class="pt-5  d-flex justify-content-center">
+                                <img class="mt-4 profile_banner rounded-circle ProfileImageIdDashboard"
+                                    id="personalProfileImageId" src="assets/images/avatar.png">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row ">
+                            <div class="form-group usernameTitle">
+                                <h5 class="iranYekanLightBold d-flex justify-content-center" id="fullNamePV">پیمان
+                                    چوگانی</h5>
+                                <h7 class="iranYekanLightBold d-flex justify-content-center mt-1"
+                                    id="skillAndCategoryName">علاقمند به بستکبال و فوتبال</h7>
+                                <input type="hidden" name="userId" id="userId">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row rounded-lg mt-3 px-0 bg-white rounded-3xl"
+                    style="min-height: 23rem !important;   border: solid #b3b4b5 1px;">
+                    <div class="flex-shrink-0 p-3 iranYekanLightBold">
+                        <ul class="list-unstyled ps-0">
+                            <li class="mb-1">
+                                <button class="btn btn-toggle d-inline-flex w-100 align-items-center rounded border-0"
+                                    data-bs-toggle="collapse">
+                                    <span>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.56 17.97H6.44C2.46 17.97 1.25 16.76 1.25 12.78V6.44C1.25 2.46 2.46 1.25 6.44 1.25H17.55C21.53 1.25 22.74 2.46 22.74 6.44V12.77C22.75 16.76 21.54 17.97 17.56 17.97ZM6.44 2.75C3.3 2.75 2.75 3.3 2.75 6.44V12.77C2.75 15.91 3.3 16.46 6.44 16.46H17.55C20.69 16.46 21.24 15.91 21.24 12.77V6.44C21.24 3.3 20.69 2.75 17.55 2.75H6.44Z"
+                                                fill="black" />
+                                            <path
+                                                d="M12 22.7502C11.59 22.7502 11.25 22.4102 11.25 22.0002V17.2202C11.25 16.8102 11.59 16.4702 12 16.4702C12.41 16.4702 12.75 16.8102 12.75 17.2202V22.0002C12.75 22.4102 12.41 22.7502 12 22.7502Z"
+                                                fill="black" />
+                                            <path
+                                                d="M22 13.75H2C1.59 13.75 1.25 13.41 1.25 13C1.25 12.59 1.59 12.25 2 12.25H22C22.41 12.25 22.75 12.59 22.75 13C22.75 13.41 22.41 13.75 22 13.75Z"
+                                                fill="black" />
+                                            <path
+                                                d="M16.5 22.75H7.5C7.09 22.75 6.75 22.41 6.75 22C6.75 21.59 7.09 21.25 7.5 21.25H16.5C16.91 21.25 17.25 21.59 17.25 22C17.25 22.41 16.91 22.75 16.5 22.75Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                    <span class="ms-2">
+                                        پیشخوان من
+                                    </span>
+
+                                </button>
+
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle  rounded border-0 collapsed w-100"
+                                    data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                                    aria-expanded="false">
+
+                                    <div class="d-inline-flex float-start">
+                                        <span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12.1205 13.53C12.1005 13.53 12.0705 13.53 12.0505 13.53C12.0205 13.53 11.9805 13.53 11.9505 13.53C9.68047 13.46 7.98047 11.69 7.98047 9.50998C7.98047 7.28998 9.79047 5.47998 12.0105 5.47998C14.2305 5.47998 16.0405 7.28998 16.0405 9.50998C16.0305 11.7 14.3205 13.46 12.1505 13.53C12.1305 13.53 12.1305 13.53 12.1205 13.53ZM12.0005 6.96998C10.6005 6.96998 9.47047 8.10998 9.47047 9.49998C9.47047 10.87 10.5405 11.98 11.9005 12.03C11.9305 12.02 12.0305 12.02 12.1305 12.03C13.4705 11.96 14.5205 10.86 14.5305 9.49998C14.5305 8.10998 13.4005 6.96998 12.0005 6.96998Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M11.9998 22.7498C9.30984 22.7498 6.73984 21.7498 4.74984 19.9298C4.56984 19.7698 4.48984 19.5298 4.50984 19.2998C4.63984 18.1098 5.37984 16.9998 6.60984 16.1798C9.58984 14.1998 14.4198 14.1998 17.3898 16.1798C18.6198 17.0098 19.3598 18.1098 19.4898 19.2998C19.5198 19.5398 19.4298 19.7698 19.2498 19.9298C17.2598 21.7498 14.6898 22.7498 11.9998 22.7498ZM6.07984 19.0998C7.73984 20.4898 9.82984 21.2498 11.9998 21.2498C14.1698 21.2498 16.2598 20.4898 17.9198 19.0998C17.7398 18.4898 17.2598 17.8998 16.5498 17.4198C14.0898 15.7798 9.91984 15.7798 7.43984 17.4198C6.72984 17.8998 6.25984 18.4898 6.07984 19.0998Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </span>
+                                        <a href="#" onclick="location.href = 'profile_personal.html#MyPersonalInfo';"
+                                            style="color: black;text-decoration: none;" class="ms-2">
+                                            پروفایل من
+                                        </a>
+                                    </div>
+                                    <span class="float-end  me-2">
+                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00001 6.19993C5.53335 6.19993 5.06668 6.01993 4.71335 5.6666L0.36668 1.31993C0.173346 1.12659 0.173346 0.806595 0.36668 0.613262C0.560013 0.419928 0.880013 0.419928 1.07335 0.613262L5.42001 4.95993C5.74001 5.27993 6.26001 5.27993 6.58001 4.95993L10.9267 0.613262C11.12 0.419928 11.44 0.419928 11.6333 0.613262C11.8267 0.806595 11.8267 1.12659 11.6333 1.31993L7.28668 5.6666C6.93335 6.01993 6.46668 6.19993 6.00001 6.19993Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <!-- <div class="collapse" id="dashboard-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle rounded border-0 collapsed w-100"
+                                    data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                                    <div class="d-inline-flex float-start">
+                                        <span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17 21.25H7C3.35 21.25 1.25 19.15 1.25 15.5V8.5C1.25 4.85 3.35 2.75 7 2.75H14C14.41 2.75 14.75 3.09 14.75 3.5C14.75 3.91 14.41 4.25 14 4.25H7C4.14 4.25 2.75 5.64 2.75 8.5V15.5C2.75 18.36 4.14 19.75 7 19.75H17C19.86 19.75 21.25 18.36 21.25 15.5V10.5C21.25 10.09 21.59 9.75 22 9.75C22.41 9.75 22.75 10.09 22.75 10.5V15.5C22.75 19.15 20.65 21.25 17 21.25Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M11.9998 12.8698C11.1598 12.8698 10.3098 12.6098 9.65978 12.0798L6.52978 9.57978C6.20978 9.31978 6.14978 8.84978 6.40978 8.52978C6.66978 8.20978 7.13977 8.14978 7.45977 8.40978L10.5898 10.9098C11.3498 11.5198 12.6398 11.5198 13.3998 10.9098L14.5798 9.96978C14.8998 9.70978 15.3798 9.75977 15.6298 10.0898C15.8898 10.4098 15.8398 10.8898 15.5098 11.1398L14.3298 12.0798C13.6898 12.6098 12.8398 12.8698 11.9998 12.8698Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M19.5 8.75C17.71 8.75 16.25 7.29 16.25 5.5C16.25 3.71 17.71 2.25 19.5 2.25C21.29 2.25 22.75 3.71 22.75 5.5C22.75 7.29 21.29 8.75 19.5 8.75ZM19.5 3.75C18.54 3.75 17.75 4.54 17.75 5.5C17.75 6.46 18.54 7.25 19.5 7.25C20.46 7.25 21.25 6.46 21.25 5.5C21.25 4.54 20.46 3.75 19.5 3.75Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </span>
+
+                                        <span class="ms-2">
+                                            تیکت پشتیبانی
+
+                                        </span>
+                                    </div>
+                                    <span class="float-end  me-2">
+                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00001 6.19993C5.53335 6.19993 5.06668 6.01993 4.71335 5.6666L0.36668 1.31993C0.173346 1.12659 0.173346 0.806595 0.36668 0.613262C0.560013 0.419928 0.880013 0.419928 1.07335 0.613262L5.42001 4.95993C5.74001 5.27993 6.26001 5.27993 6.58001 4.95993L10.9267 0.613262C11.12 0.419928 11.44 0.419928 11.6333 0.613262C11.8267 0.806595 11.8267 1.12659 11.6333 1.31993L7.28668 5.6666C6.93335 6.01993 6.46668 6.19993 6.00001 6.19993Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <!-- <div class="collapse" id="orders-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle rounded border-0 w-100 collapsed"
+                                    data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+
+                                    <div class="d-inline-flex float-start">
+                                        <span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M20.4201 12.2198C20.0101 12.2198 19.6701 11.8798 19.6701 11.4698V8.1499C19.6701 6.9099 18.6601 5.8999 17.4201 5.8999H3.58008C3.17008 5.8999 2.83008 5.5599 2.83008 5.1499C2.83008 4.7399 3.17008 4.3999 3.58008 4.3999H17.4201C19.4901 4.3999 21.1701 6.0799 21.1701 8.1499V11.4698C21.1701 11.8898 20.8301 12.2198 20.4201 12.2198Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M6.74008 9.06998C6.55008 9.06998 6.36008 8.99995 6.21008 8.84995L3.05008 5.68997C2.91008 5.54997 2.83008 5.35994 2.83008 5.15994C2.83008 4.95994 2.91008 4.76998 3.05008 4.62998L6.21008 1.46994C6.50008 1.17994 6.98008 1.17994 7.27008 1.46994C7.56008 1.75994 7.56008 2.24 7.27008 2.53L4.64011 5.15994L7.27008 7.78995C7.56008 8.07995 7.56008 8.55995 7.27008 8.84995C7.12008 8.98995 6.93008 9.06998 6.74008 9.06998Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M20.4201 19.59H6.58008C4.51008 19.59 2.83008 17.91 2.83008 15.84V12.52C2.83008 12.11 3.17008 11.77 3.58008 11.77C3.99008 11.77 4.33008 12.11 4.33008 12.52V15.84C4.33008 17.08 5.34008 18.09 6.58008 18.09H20.4201C20.8301 18.09 21.1701 18.43 21.1701 18.84C21.1701 19.25 20.8301 19.59 20.4201 19.59Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M17.2602 22.7501C17.0702 22.7501 16.8802 22.6801 16.7302 22.5301C16.4402 22.2401 16.4402 21.7601 16.7302 21.4701L19.3602 18.8401L16.7302 16.2101C16.4402 15.9201 16.4402 15.4401 16.7302 15.1501C17.0202 14.8601 17.5002 14.8601 17.7902 15.1501L20.9502 18.3101C21.0902 18.4501 21.1702 18.6401 21.1702 18.8401C21.1702 19.0401 21.0902 19.2301 20.9502 19.3701L17.7902 22.5301C17.6502 22.6801 17.4602 22.7501 17.2602 22.7501Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </span>
+
+
+                                        <span class="ms-2">
+                                            تراکنش های مالی
+
+                                        </span>
+                                    </div>
+                                    <span class="float-end me-2">
+                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00001 6.19993C5.53335 6.19993 5.06668 6.01993 4.71335 5.6666L0.36668 1.31993C0.173346 1.12659 0.173346 0.806595 0.36668 0.613262C0.560013 0.419928 0.880013 0.419928 1.07335 0.613262L5.42001 4.95993C5.74001 5.27993 6.26001 5.27993 6.58001 4.95993L10.9267 0.613262C11.12 0.419928 11.44 0.419928 11.6333 0.613262C11.8267 0.806595 11.8267 1.12659 11.6333 1.31993L7.28668 5.6666C6.93335 6.01993 6.46668 6.19993 6.00001 6.19993Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <!-- <div class="collapse" id="account-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign
+                                                out</a></li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle rounded border-0 w-100 collapsed"
+                                    data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+
+                                    <div class="d-inline-flex float-start">
+                                        <span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22.81C11.31 22.81 10.66 22.46 10.2 21.85L8.7 19.85C8.67 19.81 8.55 19.76 8.5 19.75H8C3.83 19.75 1.25 18.62 1.25 13V8C1.25 3.58 3.58 1.25 8 1.25H16C20.42 1.25 22.75 3.58 22.75 8V13C22.75 17.42 20.42 19.75 16 19.75H15.5C15.42 19.75 15.35 19.79 15.3 19.85L13.8 21.85C13.34 22.46 12.69 22.81 12 22.81ZM8 2.75C4.42 2.75 2.75 4.42 2.75 8V13C2.75 17.52 4.3 18.25 8 18.25H8.5C9.01 18.25 9.59 18.54 9.9 18.95L11.4 20.95C11.75 21.41 12.25 21.41 12.6 20.95L14.1 18.95C14.43 18.51 14.95 18.25 15.5 18.25H16C19.58 18.25 21.25 16.58 21.25 13V8C21.25 4.42 19.58 2.75 16 2.75H8Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M12 12C11.44 12 11 11.55 11 11C11 10.45 11.45 10 12 10C12.55 10 13 10.45 13 11C13 11.55 12.56 12 12 12Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M16 12C15.44 12 15 11.55 15 11C15 10.45 15.45 10 16 10C16.55 10 17 10.45 17 11C17 11.55 16.56 12 16 12Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M8 12C7.44 12 7 11.55 7 11C7 10.45 7.45 10 8 10C8.55 10 9 10.45 9 11C9 11.55 8.56 12 8 12Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </span>
+                                        <span class="ms-2">
+                                            درخواست ها و پیام ها
+                                        </span>
+                                    </div>
+                                    <span class="float-end me-2">
+                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00001 6.19993C5.53335 6.19993 5.06668 6.01993 4.71335 5.6666L0.36668 1.31993C0.173346 1.12659 0.173346 0.806595 0.36668 0.613262C0.560013 0.419928 0.880013 0.419928 1.07335 0.613262L5.42001 4.95993C5.74001 5.27993 6.26001 5.27993 6.58001 4.95993L10.9267 0.613262C11.12 0.419928 11.44 0.419928 11.6333 0.613262C11.8267 0.806595 11.8267 1.12659 11.6333 1.31993L7.28668 5.6666C6.93335 6.01993 6.46668 6.19993 6.00001 6.19993Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <!-- <div class="collapse" id="account-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign
+                                                out</a></li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle rounded border-0 w-100 collapsed"
+                                    data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+
+                                    <div class="d-inline-flex float-start">
+                                        <span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22.08C11.7 22.08 11.4 22.01 11.15 21.87C9.28 20.85 5.99 19.77 3.93 19.5L3.64 19.46C2.33 19.3 1.25 18.07 1.25 16.74V4.66001C1.25 3.87001 1.56 3.15001 2.13 2.63001C2.7 2.11001 3.44 1.86001 4.22 1.93001C6.42 2.10001 9.74 3.20001 11.62 4.38001L11.86 4.52001C11.93 4.56001 12.08 4.56001 12.14 4.53001L12.3 4.43001C14.18 3.25001 17.5 2.13001 19.71 1.94001C19.73 1.94001 19.81 1.94001 19.83 1.94001C20.56 1.87001 21.31 2.13001 21.87 2.65001C22.44 3.17001 22.75 3.89001 22.75 4.68001V16.75C22.75 18.09 21.67 19.31 20.35 19.47L20.02 19.51C17.96 19.78 14.66 20.87 12.83 21.88C12.59 22.02 12.3 22.08 12 22.08ZM3.98 3.42001C3.66 3.42001 3.37 3.53001 3.14 3.74001C2.89 3.97001 2.75 4.30001 2.75 4.66001V16.74C2.75 17.33 3.26 17.9 3.83 17.98L4.13 18.02C6.38 18.32 9.83 19.45 11.83 20.54C11.92 20.58 12.05 20.59 12.1 20.57C14.1 19.46 17.57 18.32 19.83 18.02L20.17 17.98C20.74 17.91 21.25 17.33 21.25 16.74V4.67001C21.25 4.30001 21.11 3.98001 20.86 3.74001C20.6 3.51001 20.27 3.40001 19.9 3.42001C19.88 3.42001 19.8 3.42001 19.78 3.42001C17.87 3.59001 14.79 4.62001 13.11 5.67001L12.95 5.78001C12.4 6.12001 11.62 6.12001 11.09 5.79001L10.85 5.65001C9.14 4.60001 6.06 3.58001 4.1 3.42001C4.06 3.42001 4.02 3.42001 3.98 3.42001Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M12 21.2402C11.59 21.2402 11.25 20.9002 11.25 20.4902V5.49023C11.25 5.08023 11.59 4.74023 12 4.74023C12.41 4.74023 12.75 5.08023 12.75 5.49023V20.4902C12.75 20.9102 12.41 21.2402 12 21.2402Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M7.75 9.24023H5.5C5.09 9.24023 4.75 8.90023 4.75 8.49023C4.75 8.08023 5.09 7.74023 5.5 7.74023H7.75C8.16 7.74023 8.5 8.08023 8.5 8.49023C8.5 8.90023 8.16 9.24023 7.75 9.24023Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M8.5 12.2402H5.5C5.09 12.2402 4.75 11.9002 4.75 11.4902C4.75 11.0802 5.09 10.7402 5.5 10.7402H8.5C8.91 10.7402 9.25 11.0802 9.25 11.4902C9.25 11.9002 8.91 12.2402 8.5 12.2402Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </span>
+                                        <span class="ms-2">
+                                            گواهینامه و مدارک
+
+                                        </span>
+                                    </div>
+                                    <span class="float-end  me-2">
+                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00001 6.19993C5.53335 6.19993 5.06668 6.01993 4.71335 5.6666L0.36668 1.31993C0.173346 1.12659 0.173346 0.806595 0.36668 0.613262C0.560013 0.419928 0.880013 0.419928 1.07335 0.613262L5.42001 4.95993C5.74001 5.27993 6.26001 5.27993 6.58001 4.95993L10.9267 0.613262C11.12 0.419928 11.44 0.419928 11.6333 0.613262C11.8267 0.806595 11.8267 1.12659 11.6333 1.31993L7.28668 5.6666C6.93335 6.01993 6.46668 6.19993 6.00001 6.19993Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <!-- <div class="collapse" id="account-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign
+                                                out</a></li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle rounded border-0 w-100 collapsed"
+                                    data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                                    <div class="d-inline-flex float-start">
+                                        <span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.5 11.3999H9.5C9.09 11.3999 8.75 11.0599 8.75 10.6499C8.75 10.2399 9.09 9.8999 9.5 9.8999H14.5C14.91 9.8999 15.25 10.2399 15.25 10.6499C15.25 11.0599 14.91 11.3999 14.5 11.3999Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M12 13.96C11.59 13.96 11.25 13.62 11.25 13.21V8.20996C11.25 7.79996 11.59 7.45996 12 7.45996C12.41 7.45996 12.75 7.79996 12.75 8.20996V13.21C12.75 13.62 12.41 13.96 12 13.96Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M19.0703 22.75C18.5603 22.75 18.0003 22.6 17.4603 22.29L12.5803 19.58C12.2903 19.42 11.7203 19.42 11.4303 19.58L6.55031 22.29C5.56031 22.84 4.55031 22.9 3.78031 22.44C3.01031 21.99 2.57031 21.08 2.57031 19.95V5.86C2.57031 3.32 4.64031 1.25 7.18031 1.25H16.8303C19.3703 1.25 21.4403 3.32 21.4403 5.86V19.95C21.4403 21.08 21.0003 21.99 20.2303 22.44C19.8803 22.65 19.4803 22.75 19.0703 22.75ZM12.0003 17.96C12.4703 17.96 12.9303 18.06 13.3003 18.27L18.1803 20.98C18.6903 21.27 19.1603 21.33 19.4603 21.15C19.7603 20.97 19.9303 20.54 19.9303 19.95V5.86C19.9303 4.15 18.5303 2.75 16.8203 2.75H7.18031C5.47031 2.75 4.07031 4.15 4.07031 5.86V19.95C4.07031 20.54 4.24031 20.98 4.54031 21.15C4.84031 21.32 5.31031 21.27 5.82031 20.98L10.7003 18.27C11.0703 18.06 11.5303 17.96 12.0003 17.96Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </span>
+                                        <span class="ms-2">
+                                            علاقه مندی ها
+
+                                        </span>
+                                    </div>
+                                    <span class="float-end me-2">
+                                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00001 6.19993C5.53335 6.19993 5.06668 6.01993 4.71335 5.6666L0.36668 1.31993C0.173346 1.12659 0.173346 0.806595 0.36668 0.613262C0.560013 0.419928 0.880013 0.419928 1.07335 0.613262L5.42001 4.95993C5.74001 5.27993 6.26001 5.27993 6.58001 4.95993L10.9267 0.613262C11.12 0.419928 11.44 0.419928 11.6333 0.613262C11.8267 0.806595 11.8267 1.12659 11.6333 1.31993L7.28668 5.6666C6.93335 6.01993 6.46668 6.19993 6.00001 6.19993Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <!-- <div class="collapse" id="account-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign
+                                                out</a></li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle rounded border-0 w-100 collapsed"
+                                    data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                                    <div class="d-inline-flex float-start">
+
+                                        <span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12.1205 13.53C12.1005 13.53 12.0705 13.53 12.0505 13.53C12.0205 13.53 11.9805 13.53 11.9505 13.53C9.68047 13.46 7.98047 11.69 7.98047 9.50998C7.98047 7.28998 9.79047 5.47998 12.0105 5.47998C14.2305 5.47998 16.0405 7.28998 16.0405 9.50998C16.0305 11.7 14.3205 13.46 12.1505 13.53C12.1305 13.53 12.1305 13.53 12.1205 13.53ZM12.0005 6.96998C10.6005 6.96998 9.47047 8.10998 9.47047 9.49998C9.47047 10.87 10.5405 11.98 11.9005 12.03C11.9305 12.02 12.0305 12.02 12.1305 12.03C13.4705 11.96 14.5205 10.86 14.5305 9.49998C14.5305 8.10998 13.4005 6.96998 12.0005 6.96998Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M11.9998 22.7498C9.30984 22.7498 6.73984 21.7498 4.74984 19.9298C4.56984 19.7698 4.48984 19.5298 4.50984 19.2998C4.63984 18.1098 5.37984 16.9998 6.60984 16.1798C9.58984 14.1998 14.4198 14.1998 17.3898 16.1798C18.6198 17.0098 19.3598 18.1098 19.4898 19.2998C19.5198 19.5398 19.4298 19.7698 19.2498 19.9298C17.2598 21.7498 14.6898 22.7498 11.9998 22.7498ZM6.07984 19.0998C7.73984 20.4898 9.82984 21.2498 11.9998 21.2498C14.1698 21.2498 16.2598 20.4898 17.9198 19.0998C17.7398 18.4898 17.2598 17.8998 16.5498 17.4198C14.0898 15.7798 9.91984 15.7798 7.43984 17.4198C6.72984 17.8998 6.25984 18.4898 6.07984 19.0998Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </span>
+                                        <a href="#" onclick="location.href = 'personal_group.html#MyPersonalInfo';"
+                                            style="color: black;" class="ms-2">
+                                            گروه من
+                                        </a>
+                                    </div>
+
+                                </button>
+
+                                <!-- <div class="collapse" id="account-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign
+                                                out</a></li>
+                                    </ul>
+                                </div> -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8  col-sm-12">
+                <div class="rounded-lg p-1 bg-white rounded-3xl ">
+                    <div class="row">
+                        <div class="col-12 mt-n5 mx-auto">
+                            <div id="groupBackground"
+                                class="pt-5 rounded-lg shadow-lg bg-white mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders -mt-16 sticky backgound_banner2 height_16rem">
+                                <i class="fa-regular fa-pen-to-square me-4 fa-2x float-end hover-shadow"
+                                    style="color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+
+                                <div class="pt-5  d-flex margin_top_6rem">
+
+
+                                    <img class="mt-3 profile_banner rounded-circle ProfileImageId"
+                                        id="groupProfileImageId" src="assets/images/avatar.png">
+                                    <input type="hidden" id="businessBackgroundId" />
+                                    <input type="hidden" id="businessProfileId" />
+                                    <i class="fa-regular margin_left_right_for_edit_business_profile fa-pen-to-square fa-2x hover-shadow"
+                                        style="color: white;" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal2"></i>
+
+                                </div>
+
+                                <!-- Modal invatec code -->
+                                <div class="modal fade" id="ConfirmPopUp" tabindex="-1"
+                                    aria-labelledby="ConfirmPopUpModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="ConfirmPopUpModal">
+                                                    تاییدیه
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">انصراف</button>
+                                                <button type="button" id="ConfirmPopUpBtn" onclick=""
+                                                    class="btn btn-primary">تایید</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">تغییر بکگراند</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="#" enctype="multipart/form-data"
+                                                id="businessUploadBackground">
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="file" name="file" id="formFile">
+                                                </div>
+                                                <input type="hidden" name="id" />
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">انصراف</button>
+                                                    <button type="button"
+                                                        onclick="updateBackgroundForm($(this),$('#businessUploadBackground')[0])"
+                                                        class="btn btn-primary">تغییر</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="generalWarning" tabindex="-1"
+                                    aria-labelledby="generalWarningW" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="generalWarningW">هشدار</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body" id="generalWarningMsg">
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">انصراف</button>
+                                                <button id="generalConfirmBtt" type="button" onclick=""
+                                                    class="btn btn-primary">تغییر</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel2">تغییر نمایه</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="#" enctype="multipart/form-data"
+                                                id="businessUploadProfile">
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="file" name="file" id="formFile">
+                                                </div>
+                                                <input type="hidden" name="id" id="profileImageId" />
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">انصراف</button>
+                                                    <button type="button"
+                                                        onclick="updateProfileForm($(this),$('#businessUploadProfile')[0])"
+                                                        class="btn btn-primary">تغییر</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Modal for load User -->
+                                <div class="modal fade" id="modalLoadUser" tabindex="-1"
+                                    aria-labelledby="modalLoadUser2" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="modalLoadUser2">افزودن کاربر</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="row mb-3 g-3">
+                                                    <div class="col-md-12">
+                                                        <label for="autocompleteRegularInput" class="form-label">
+                                                            جستجوی نام کاربران
+                                                        </label>
+                                                        <input type="text" class="form-control"
+                                                            id="autocompleteRegularInput"
+                                                            placeholder="Type something" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">انصراف</button>
+                                                <button type="button"
+                                                    onclick="addUserTogroup($('#ac-menu-1-0').attr('data-value'))"
+                                                    class="btn btn-primary">افزودن</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- media group form -->
+                                <div class="modal fade" id="skillMediaOverview" tabindex="-1"
+                                    aria-labelledby="skillMedaiModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="skillMedaiModal">افزودن ویدیو/تصویر
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="#" enctype="multipart/form-data"
+                                                id="skillMediaForm">
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="file" name="file" id="formFile2">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">انصراف</button>
+                                                    <button type="button"
+                                                        onclick="addMediaFormTOGroup($(this),$('#skillMediaForm')[0])"
+                                                        class="btn btn-primary">اپلود</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- media skill form -->
+                                <div class="modal fade" id="skillMediaToGroupOverview" tabindex="-1"
+                                    aria-labelledby="skillMediaToGroupOverviewModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="skillMediaToGroupOverviewModal">افزودن
+                                                    ویدیو/تصویر
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="#" enctype="multipart/form-data"
+                                                id="skillMediaToGroupOverviewForm">
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="file" name="file" id="formFile2">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">انصراف</button>
+                                                    <button type="button"
+                                                        onclick="addMediaFormTOSkill($(this),$('#skillMediaToGroupOverviewForm')[0])"
+                                                        class="btn btn-primary">اپلود</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- upload media answer -->
+                                <div class="modal fade" id="anserMediaOverview" tabindex="-1"
+                                    aria-labelledby="anserMediaOverviewModal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="anserMediaOverviewModal">افزودن
+                                                    ویدیو/تصویر
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="#" enctype="multipart/form-data"
+                                                id="ansMediaForm">
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="file" name="file" id="formFile2">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">انصراف</button>
+                                                    <button type="button" id="anserMediaOverviewBtn"
+                                                        onclick="addMediaFormTOAnser($(this),answerIdd,$('#ansMediaForm')[0])"
+                                                        class="btn btn-primary">اپلود</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="MyPersonalInfo"
+                        class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-5 sticky">
+                        <div class="producer-title mt-4_costum">
+                            <h3
+                                class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                                اعضای گروه
+                            </h3>
+
+                            <span class="alert alert-danger " id="groupConfirmedNot" role="alert"
+                                style="display: none;font-size: 10px;">
+                                در انتظار تایید ادمین
+                            </span>
+                            <span class="alert alert-success " id="groupConfirmed" role="alert"
+                                style="display: none;font-size: 10px;">
+                                تایید شده برای نمایش
+                            </span>
+
+                        </div>
+                        <div class="col-md-12 mt-4">
+
+                            <div class="row" id="memberdivs">
+                                <div class=" text-center col-md-2 col-xs-12">
+                                    <img src="/assets/images/Group 33932.png"
+                                        class="rounded-circle mx-auto memberImageSize">
+                                    <p class="text-center iranYekanLightBold p_custom">
+                                        یلدا محبی
+                                    </p>
+                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
+                                </div>
+                                <div class="text-center col-md-2 col-xs-12">
+                                    <img src="/assets/images/Ellipse 420.png"
+                                        class="rounded-circle mx-auto memberImageSize">
+                                    <p class="text-center iranYekanLightBold p_custom">
+                                        شیدا یداللهی
+                                    </p>
+                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
+                                </div>
+                                <div class="text-center col-md-2 col-xs-12">
+                                    <img src="/assets/images/Ellipse 421.png"
+                                        class="rounded-circle mx-auto memberImageSize">
+                                    <p class="text-center iranYekanLightBold p_custom">
+                                        حسین مقدم
+                                    </p>
+                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
+                                </div>
+                                <div class="text-center col-md-2 col-xs-12">
+                                    <img src="/assets/images/Ellipse 422.png"
+                                        class="rounded-circle mx-auto memberImageSize">
+                                    <p class="text-center iranYekanLightBold p_custom">
+                                        آرش مقدم
+                                    </p>
+                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
+                                </div>
+                                <div class="text-center col-md-2 col-xs-12">
+                                    <img src="/assets/images/Ellipse 423.png"
+                                        class="rounded-circle mx-auto memberImageSize">
+                                    <p class="text-center iranYekanLightBold p_custom">
+                                        اذیتا حچت
+                                    </p>
+                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
+                                </div>
+                                <div class="text-center col-md-2 col-xs-12">
+                                    <img src="/assets/images/Ellipse 425.png"
+                                        class="rounded-circle mx-auto memberImageSize">
+                                    <p class="text-center iranYekanLightBold p_custom">
+                                        محسن شمس
+                                    </p>
+                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8"></div>
+                                <div class="col-md-4 form-group">
+                                    <button type="button" onclick="$('#modalLoadUser').modal('toggle')"
+                                        class="btn btn-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 w-100">
+                                        <span class="p_custom px-2">
+                                            افزودن عضو
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <h3
+                                class="  mt-4 iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                                اطلاعات گروه
+                            </h3>
+                            <div class="row mt-5_costom">
+
+                                <div class="col-md-7  col-xs-12">
+                                    <div class="form-group w_75_costum">
+                                        <label for="groupName" class="iranYekanLightBold">نام گروه</label>
+                                        <input type="text" class="form-control  rounded-end-3 text-gray-400 inputHeight"
+                                            id="groupName" />
+                                        <input type="hidden" name="groupId" id="groupId" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5 mt-5_mobile mx-auto col-xs-12">
+                                    <div class="form-group w_75_costum">
+                                        <label class="iranYekanLightBold " for="createDurationGroup">مدت زمان تشکیل
+                                            گروه</label>
+                                        <input type="text" class="form-control iranYekanLight inputHeight"
+                                            id="createDurationGroup" placeholder="4">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-md-1 col-xs-12"></div>
+                                <div class="col-md-4 col-xs-12">
+                                    <div id="videoGroup"></div>
+
+                                    <div class="row mt-3">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#skillMediaOverview"
+                                            class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
+                                            <i class="fa-solid fa-plus"></i>
+                                            <span class="p_custom px-2">
+                                                افزودن ویدئو نوازندگی
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-2 col-xs-12"></div>
+                                <div class="col-md-4 mx-auto col-xs-12">
+                                    <div id="imageGroup"></div>
+                                    <div class="row mt-3">
+                                        <button type="button" data-bs-toggle="modal"
+                                            data-bs-target="#skillMediaOverview"
+                                            class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
+                                            <i class="fa-solid fa-plus"></i>
+                                            <span class="p_custom px-2">
+                                                افزودن تصویر
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" name="mediaIdss" id="mediasIdsId" value="[]">
+                                    <input type="hidden" name="mediaIdss" id="mediasIdsIdV2" value="[]">
+
+                                </div>
+                                <div class="col-md-1 col-xs-12"></div>
+
+                            </div>
+                            <div class="d-flex mt-5 form-group">
+                                <button type="button" onclick="setGeneralInformation($(this))"
+                                    class="btn btn-outline-secondary float-start  text-sm mx-auto px-3 w-75">
+                                    <span class="p_custom px-2">
+                                        ذخیره
+                                    </span>
+                                </button>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div id="contactWithMe"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            ارتباط با گروه
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+
+                        <div class="row">
+                            <div class="col-md-7 padding_x_0 col-xs-12">
+                                <div class="form-group w_75_costum d-flex">
+
+                                    <input style="direction: ltr;" type="text"
+                                        class="form-control iranYekanLight inputHeight" id="twitterLink"
+                                        placeholder="https://www.twitter.com/sabach">
+                                    <i class="fa-brands mobile_display_none fa-twitter fa-2x ms-3 mt-3"></i>
+                                </div>
+
+                            </div>
+                            <div class="col-md-5 mt-3_costom padding_x_0 mx-auto col-xs-12">
+                                <div class="form-group w_75_costum d-flex">
+                                    <input style="direction: ltr;" type="text"
+                                        class="form-control iranYekanLight inputHeight" id="facebookLink"
+                                        placeholder="https://www.facebook.com/sabach">
+                                    <i class="fa-brands mobile_display_none fa-facebook-f fa-xl ms-3 mt-4"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row mt-5_costom">
+                            <div class="col-md-7 padding_x_0 col-xs-12">
+                                <div class="form-group w_75_costum d-flex">
+                                    <input style="direction: ltr;" type="text"
+                                        class="form-control iranYekanLight inputHeight" id="instagramLinkOne"
+                                        placeholder="www.instagram.com/saba_choupani/">
+                                    <i class="fa-brands mobile_display_none fa-instagram fa-2x ms-3 mt-2"
+                                        style="color: #000000;"></i>
+                                </div>
+
+                            </div>
+                            <div class="col-md-5 mt-3_costom padding_x_0 mx-auto col-xs-12">
+                                <div class="form-group w_75_costum d-flex">
+                                    <input style="direction: ltr;" type="text"
+                                        class="form-control iranYekanLight inputHeight" id="instagramLinkTwo"
+                                        placeholder="www.instagram.com/saba_choupani/">
+                                    <i class="fa-brands mobile_display_none fa-instagram fa-2x ms-3 mt-2"
+                                        style="color: #000000;"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                        <div class="d-flex mt-5_costom form-group">
+                            <button type="button" onclick="updateSocial($(this))"
+                                class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-25-costum pt-2 ">
+                                <i class="fa-solid fa-plus mobile_display_none"></i>
+                                <span class="p_custom_2 px-2">
+                                    افزودن شبکه های اجتماعی
+                                </span>
+                            </button>
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+
+                <div id="aboutMe"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            درباره گروه
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group w-100 d-flex">
+
+                                    <textarea placeholder=" ویژگی های شخصیتی و حرفه ی خود در این قسمت بنویسید.."
+                                        class="form-control iranYekanLight" id="aboutMesasas" rows="8"></textarea>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-10">
+
+                            </div>
+                            <div class="col-md-1 ps-0 form-group">
+                                <button type="button" "
+                                    class=" btn btn-outline-dark border-radius-1_2rem float-start text-sm mx-auto pt-2 ">
+                                    <span class=" p_custom px-2">
+                                    انصراف
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="col-md-1 form-group">
+                                <button type="button" onclick="updateAboutMe($(this))"
+                                    class="btn btn-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 ">
+                                    <span class="p_custom px-2">
+                                        ذخیره
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="spskill"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <input type="hidden" id="skillId" />
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            اطلاعات تخصصی گروه
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+
+                        <div class="row">
+                            <div class="col-md-5 col-xs-12 margin-top-1rem">
+                                <div class="form-group w_75_costum instrumnetClass">
+                                    <label for="instrumentss" class="iranYekanLightBold">ساز تخصصی</label>
+                                    <div class="input-group">
+
+                                        <select
+                                            onchange="$('#mediasIdsIdV2').val('[]');$('#skillId').val('');$('#workExperienceYears').val('');$('#imageSkill').empty();$('#videoSkill').empty();buildTemplateQuestion(2003)"
+                                            class="form-select form-control  rounded-end-3 text-gray-400 inputHeight"
+                                            aria-label="Filter select" id="instrumentss">
+                                            <option>
+                                                انتخاب کنید
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="form-group w_75_costum artStyleClass">
+                                    <label for="artStyle" class="iranYekanLightBold">سبک</label>
+                                    <div class="input-group">
+
+                                        <select
+                                            class="form-select form-control  rounded-end-3 text-gray-400 inputHeight"
+                                            aria-label="Filter select" id="artStyle">
+                                            <option value=null>
+                                                انتخاب کنید
+                                            </option>
+                                            <option>
+                                                پاپ
+                                            </option>
+                                            <option>
+                                                جز
+                                            </option>
+                                            <option>
+                                                کانتری
+                                            </option>
+                                            <option>
+                                                رپ
+                                            </option>
+                                            <option>
+                                                راک
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-5 mx-auto col-xs-12">
+                                <div class="form-group w_75_costum">
+                                    <label class="iranYekanLightBold " for="workExperienceYears">مدت زمان </label>
+                                    <input type="text" class="form-control iranYekanLight inputHeight"
+                                        id="workExperienceYears" placeholder="3">
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row mt-5_costom">
+
+
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-md-1 col-xs-12"></div>
+                            <div class="col-md-4 col-xs-12">
+                                <div id="videoSkill">
+                                    <!-- <div id="id1">
+                                        <i class="fa-solid fa-trash-can me-4 ms-2 mt-1  fa-1x float-end hover-shadow"
+                                            style="color: rgb(255, 255, 255);  position: absolute;  z-index: 10000;"
+                                            data-bs-toggle="modal" onclick="confirmToRemove('id1','','')"></i>
+                                        <div class="row">
+                                            <div class="ratio ratio-16x9"><iframe style="border-radius: 0.9rem;"
+                                                    src="/media/176591c5-c0a0-4748-86b9-698561aa016b" title=""
+                                                    allowfullscreen=""></iframe></div>
+                                        </div>
+                                    </div> -->
+
+                                </div>
+
+                                <div class="row mt-3">
+                                    <button type="button" data-bs-toggle="modal"
+                                        data-bs-target="#skillMediaToGroupOverview"
+                                        class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <span class="p_custom px-2">
+                                            افزودن ویدئو نوازندگی
+                                        </span>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2 col-xs-12"></div>
+                            <div class="col-md-4 mx-auto col-xs-12">
+                                <div id="imageSkill">
+                                    <!-- <div id="imageSkill2">
+                                        <i class="fa-solid fa-trash-can mt-1 me-4  ms-2 fa-1x float-end hover-shadow"
+                                            style="color: rgb(255, 255, 255);  position: absolute;  z-index: 10000;"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                                        <img src="/media/e85dfcde-7efb-445c-8629-9caa8ed03d6d"
+                                            style="border-radius: 0.9rem;height:11.4rem; width:100%;" title=""
+                                            allowfullscreen="">
+                                    </div> -->
+
+                                </div>
+                                <div class="row mt-3">
+                                    <button type="button" data-bs-toggle="modal"
+                                        data-bs-target="#skillMediaToGroupOverview"
+                                        class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <span class="p_custom px-2">
+                                            افزودن تصویر
+                                        </span>
+                                    </button>
+                                </div>
+                                <input type="hidden" name="mediaIdss" id="mediasIdsId" value=null />
+
+                            </div>
+                            <div class="col-md-1 col-xs-12"></div>
+
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-md-8"></div>
+                            <div class="col-md-2">
+                                <div class="d-flex form-group">
+                                    <button type="button" onclick="saveSkill(false)"
+                                        class="btn btn-outline-dark float-start  text-sm mx-auto px-3 w-75">
+                                        <span class="p_custom">
+                                            ذخیره
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="d-flex form-group">
+                                    <button type="button" onclick="saveSkill(true)"
+                                        class="btn btn-outline-dark float-start  text-sm mx-auto px-3 w-75 marginTop1rem">
+                                        <span class="p_custom">
+                                            افزودن
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="compaleteIfno"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            لیست تخصص ها
+                        </h3>
+                    </div>
+                    <div>
+                        <div class="row mt-3">
+                            <table class="table table-hover iranYekanLight mobile_font_size">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">حوزه تخصصی</th>
+                                        <th scope="col">سبک</th>
+                                        <th scope="col">ساز تخصصی</th>
+                                        <th scope="col">مدت زمان</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listSkillstBody">
+                                    <tr>
+                                        <td>نوازنده</td>
+                                        <td>گیتار</td>
+                                        <td>10</td>
+                                        <td class="d-flex">
+                                            <a class="nav-link" href="#">ویرایش</a>
+                                        </td>
+                                        <td>
+                                            <a class="nav-link" href="#">حذف</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>نوازنده</td>
+                                        <td>گیتار</td>
+                                        <td>10</td>
+                                        <td class="d-flex">
+                                            <a class="nav-link" href="#">ویرایش</a>
+                                        </td>
+                                        <td>
+                                            <a class="nav-link" href="#">حذف</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="compaleteIfno"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            اطلاعات تکمیلی من
+                        </h3>
+                    </div>
+                    <div id="questionsDiv">
+
+
+                    </div>
+                </div>
+                <div id="sampleWork"
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            نمونه کارها
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        <div id="carouselExampleIndicators2" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row" id="workSamplesDiv">
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div
+                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
+                    <div class="producer-title mt-2">
+                        <h3
+                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
+                            توضیحات دلخواه
+                        </h3>
+                    </div>
+                    <div class="col-md-12 mt-4">
+
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group w-100 d-flex">
+
+                                    <textarea id="extraDescription"
+                                        placeholder="  اگر توضیحات خاصی مدنظرتون هست در این قسمت بنویسید.."
+                                        class="form-control iranYekanLight" id="extraInformation" rows="8"></textarea>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row mt-5_costom">
+                            <div class="col-md-2">
+
+                            </div>
+                            <div class="col-md-5 ps-5_costom  form-group">
+
+                            </div>
+                            <div class="col-md-2 ps-0-costum mr_right form-group">
+
+                            </div>
+                            <div class="col-md-3 ps-0-costum mr_right2 form-group">
+                                <button type="button" onclick="updateExtraDescription($(this))"
+                                    class="btn btn-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 ">
+                                    <span class="p_custom px-2">
+                                        ذخیره توضیحات اضافه
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer p-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex">
+                                <img src="assets/icons/Bia2band1.svg" alt="guaranty-u-img" class="rounded-full"
+                                    width="50" height="50" loading="lazy">
+                                <strong class="text-xl mt-2">بیا توبند</strong>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-4 px-5">
+                            توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر
+                            از
+                            بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند ...
+                        </p>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12 ">
+                            <i class="fa fa-location-dot text-gray-400">
+
+                            </i>
+                            <b class="text-xs text-slate-500 m-2">تهران , خیابان ولی عصر , پاسداران جنوبی , خیابان
+                                مظفر , ساختمان شماره 17</b>
+                        </div>
+                        <div class="col-md-12 ">
+                            <i class="fa-solid fa-phone-flip text-gray-400"></i>
+                            <b class="text-xs text-slate-500 m-2">09125858595</b>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-2">
+                    <h5 class="text-xl mt-2">دسترسی سریع </h5>
+                    <ul class="list-disc text-slate-500">
+                        <li>صفحه اصلی</li>
+                        <li>راهنمای مشتریان</li>
+                        <li>ورود و ثبت نام</li>
+                        <li>بلاگ</li>
+                        <li>فروشگاه</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="text-xl mt-2">خدمات ما</h5>
+                    <ul class="list-disc text-slate-500">
+                        <li>صفحه اصلی</li>
+                        <li>راهنمای مشتریان</li>
+                        <li>ورود و ثبت نام</li>
+                        <li>بلاگ</li>
+                        <li>فروشگاه</li>
+                    </ul>
+                </div>
+                <div class="col-md-1 mt-2">
+                    <img src="assets/images/e-namad.png" alt="eNamad-img" class="rounded-lg" height="150"
+                        loading="lazy">
+                </div>
+                <div class="col-md-1 ms-5 mt-2">
+                    <img src="assets/images/samandehi.png" alt="eNamad-img" class="rounded-lg" height="150"
+                        loading="lazy">
+                </div>
+            </div>
+            <hr>
+            <div class="row rounded  border-style-footer d-flex justify-content-center align-self-end">
+                <div class="col-md-12 d-flex pt-3 justify-content-center align-self-end">
+                    <p>تمام حقوق این سایت متعلق به بیا تو بند می باشد</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+</body>
+
+</html>

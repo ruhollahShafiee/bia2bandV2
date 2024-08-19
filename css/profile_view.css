@@ -1,0 +1,48 @@
+.sidbarTab {
+  font-size: 13px;
+  background-color: white !important;
+  border-bottom-color: aliceblue !important;
+  margin: 0px !important;
+}
+
+
+.aboutAdv {
+  font-size: 12px !important;
+}
+
+.mybeKnowImage {
+  width: 5rem !important;
+  height: 5rem !important;
+}
+
+.ms-4-custom {
+  margin-right: 1.5rem !important;
+}
+
+@media (max-width: 500px) {
+
+  .tabStart {
+    font-size: 10px !important;
+  }
+
+
+
+  
+  .margin-top-mobile {
+    margin-top: 2rem !important;
+  }
+
+}
+
+
+@media (min-width: 1400px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1480px !important;
+  }
+}

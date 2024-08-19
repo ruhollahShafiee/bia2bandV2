@@ -1,0 +1,17 @@
+.memberImageSize{
+    width: 7rem;
+    height: 7rem;
+}
+
+.memberRemoveIcon{
+    margin-top: -10rem;
+    margin-right: -4rem;
+}
+
+@media (max-width: 500px) {
+
+    .memberRemoveIcon{
+        margin-top: -10rem;
+        margin-right: -5rem;
+    }
+}
