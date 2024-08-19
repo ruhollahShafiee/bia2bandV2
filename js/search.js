@@ -28,7 +28,7 @@ function getAllInstruments(){
 
 
 
-function search(){
+function search(complated){
     let categoryId= $('input[name="cateoryRadio"]:checked').val();
     let name=$("#sugesstedName").val();
     let cityID=$("#ac-menu-1-0").attr("data-value");
@@ -38,7 +38,8 @@ function search(){
         "name":name,
         "cityId":cityID,
         "instrumentId":instrumentId,
-        "categoryId":categoryId
+        "categoryId":categoryId,
+        "completed":complated
     }
 
     $.ajax({
@@ -69,11 +70,11 @@ function buildArtistSearch(param,emelentId) {
     for(let ag of param){
         element +=
         '<div class=" mt-3 card shadow-sm bg-white border-0">'+
-                    '<img alt="cover-3" src="'+ag.backgroundURL+'" class="h-40 object-cover img-fluid">'+
+                    '<img alt="cover-3" src="'+(ag.backgroundURL == null || ag.backgroundURL == "" ? "/assets/images/banner.png":ag.backgroundURL)+'" style="object-fit: cover;" class="h-40 object-cover img-fluid">'+
                     '<div class="card-title avatar_margin">'+
                         '<span'+
                             ' class="ant-avatar ant-avatar-circle ant-avatar-image  -mt-14 h-24 w-24 shadow-xl css-dev-only-do-not-override-1a9vt8h">'+
-                            '<img class="profileViewImage" src="'+ag.profileUrl+'">'+
+                            '<img class="profileViewImage" src="'+(ag.profileUrl == null || ag.profileUrl == "" ? "/assets/images/avatar.png":ag.profileUrl)+'">'+
                         '</span>'+
                     '</div>'+
                     '<div class="card-body">'+

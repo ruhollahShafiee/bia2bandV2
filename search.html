@@ -106,6 +106,9 @@
                         <a class='nav-link' href='profile.html'>مدیریت کسب و کار</a>
                     </li>
                     <li class='nav-item'>
+                        <a class='nav-link' href='search.html'>جستجوی پیشرفته</a>
+                    </li>
+                    <li class='nav-item'>
                         <a class='nav-link' href='#'>بلاگ</a>
                     </li>
                     <li class='nav-item'>
@@ -222,7 +225,7 @@
                             </select>
                         </div>
                         <div class="col-md-4 w-auto input-group mb-3 margin-right-3rem">
-                            <button onclick="search()"
+                            <button onclick="search(false)"
                                 class="btn btn-outline-secondary text-sm border-dotted6 btn_search" role="button">جست و
                                 جو</button>
                         </div>
@@ -245,14 +248,14 @@
                     </span>
                     <div class="d-flex">
                         <button type="button"
-                            onclick="toggleActivation($(this), 'sorting');searchBusiness($('#keyword').val(),$('#city').val(),$('#category').find(':selected').val(),true,false)"
-                            class="sorting btn btn-outline-dark rounded-pill  text-sm active width_9rem">
+                            onclick="toggleActivation($(this), 'sorting');search(true)"
+                            class="sorting btn btn-outline-dark rounded-pill  text-sm width_9rem">
                             <span class="p_custom">
                                 تکمیل بودن پروفایل
                             </span>
                         </button>
                         <button type="button"
-                            onclick="toggleActivation($(this), 'sorting');searchBusiness($('#keyword').val(),$('#city').val(),$('#category').find(':selected').val(),false,true)"
+                            onclick="toggleActivation($(this), 'sorting');search(false)"
                             class="sorting  btn btn-outline-dark rounded-pill ms-2 text-sm ">
                             <span class="p_custom">
                                 پربازدیدترین
