@@ -62,15 +62,27 @@ function search(complated){
 
 
 function buildArtistSearch(param,emelentId) {
-
-
-    let element="";
     
+    if(param == null || param == ""){
+        $("#"+emelentId).empty()
+        $("#"+emelentId).append('<img src="/assets/images/nothings_found.png" />')
+
+        return ;
+    }
+
+
+    let element='<div class="row">';
+    
+    let i=0;
 
     for(let ag of param){
+        if(i%4 == 0){
+            element +='</div><div class="row">'
+        }
+        i++
         element +=
-        '<div class=" mt-3 card shadow-sm bg-white border-0">'+
-                    '<img alt="cover-3" src="'+(ag.backgroundURL == null || ag.backgroundURL == "" ? "/assets/images/banner.png":ag.backgroundURL)+'" style="object-fit: cover;" class="h-40 object-cover img-fluid">'+
+        '<div class="col-md-3"><div class=" mt-3 card shadow-sm bg-white border-0">'+
+                    '<img alt="cover-3" src="'+(ag.backgroundURL == null || ag.backgroundURL == "" ? "/assets/images/banner.png":ag.backgroundURL)+'" style="object-fit: cover;" class="h-40 mt-2 object-cover img-fluid">'+
                     '<div class="card-title avatar_margin">'+
                         '<span'+
                             ' class="ant-avatar ant-avatar-circle ant-avatar-image  -mt-14 h-24 w-24 shadow-xl css-dev-only-do-not-override-1a9vt8h">'+
@@ -79,21 +91,21 @@ function buildArtistSearch(param,emelentId) {
                     '</div>'+
                     '<div class="card-body">'+
                         '<div class="row">'+
-                            '<div class="col-md-8">'+
+                            '<div class="col-md-7">'+
                                 '<h5 class="w-auto mt-1 ms-1">'+
                                 ag.name+
                                 '</h5>'+
-                                '<p class="card-text desc_card">'+
-                                (ag.description == null ? "-- " : ag.description.substring(0, 100))+
+                                '<p class="card-text desc_card" style="font-size: 14px;">'+
+                                (ag.description == null ? "-- " : ag.description.substring(0, 10))+
                                 '</p>'+
-                                '<p class="card-text">'+
+                                '<p class="card-text" style="font-size: 14px;">'+
                                     ag.skillCategory+
                                 '</p>'+
                             '</div>'+
-                            '<div class="col-md-4 ">'+
+                            '<div class="col-md-5 ">'+
                                 
                                     '<span class="d-inline mx-auto justify-content-center"> '+
-                                        '<svg width="64" height="64" viewBox="0 0 64 64" fill="none"'+
+                                        '<svg style="cursor: pointer;" onclick="addInterseted($(this),'+ag.id+',\''+ag.type+'\')" width="50" height="50" viewBox="0 0 64 64" fill="none"'+
                                             ' xmlns="http://www.w3.org/2000/svg">'+
                                             '<g filter="url(#filter0_d_1718_7142)">'+
                                                 '<circle cx="32" cy="28" r="23.5" fill="white" stroke="black"></circle>'+
@@ -122,26 +134,25 @@ function buildArtistSearch(param,emelentId) {
                                             '</defs>'+
                                         '</svg>'+
                                     '</span>'+
-                                    '<span class="d-inline mx-auto justify-content-center" >'+
-                                        'ذخیره کردن'+
-                                    '</span>'+
                                     '<div class="row ">'+
-                                        '<span class="mx-auto d-flex justify-content-center "> '+
-                                            ag.extraDescription +
+                                        '<span class="mx-auto d-flex justify-content-center  " style="font-size: 12px;"> '+
+                                            (ag.extraDescription == null ? "--": ag.extraDescription) +
                                         '</span>'+
                                     '</div>'+
-                                '<div class="row">'+
+                            '</div>'+
+                        '</div>'+ 
+                        '<div class="row">'+
                                     '<a href="'+(ag.type == 'artist'? "profile_view.html#artistId="+ag.id :"group_view.html#groupId="+ag.id)+'" class="btn btn-outline-secondary text-sm border-dotted px-3 ">'+
                                         '<span class="p_custom px-2">'+
                                             'مشاهده اطلاعات'+
                                         '</span>'+
                                     '</a>'+
-                                '</div>'+
-                            '</div>'+
                         '</div>'+
                     '</div>'+
-                '</div>'
+                '</div></div>'
     }
+
+    element +="</div>"
 
     $("#searchResultCount").empty()
     $("#searchResultCount").append(param.length)
@@ -152,7 +163,6 @@ function buildArtistSearch(param,emelentId) {
    
 
 }
-
 
 
 $(document).ready(function () {

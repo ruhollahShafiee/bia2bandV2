@@ -32,6 +32,17 @@ function login(username_var, password_var,tagObj) {
 
 
 function register(firstname, lastname, email, username, password, invitedCode, phoneNumber, tagObj) {
+
+    if($("#password2").val() != $("#password1").val()){
+        alert("رمز عبور یکسان نیست ")
+        return;
+    }
+
+    let validationPassword=validatePassword(password);
+    if(!validationPassword.isValid){
+        alert(validationPassword.message)
+        return;
+    }
     let data = {
         "firstname": firstname,
         "lastname": lastname,
@@ -67,48 +78,22 @@ function register(firstname, lastname, email, username, password, invitedCode, p
 }
 
 
-function getSomeThing() {
-    let access_token = getCookie("access_token");
-    if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+function validatePassword(password) {
+    // Regular expression for strong password
+    const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+    // Test if the password matches the regex
+    if (strongPasswordRegex.test(password)) {
+        return {
+            isValid: true,
+            message: "Password is strong."
+        };
+    } else {
+        return {
+            isValid: false,
+            message: "رمز عبور باید حداقل ۸ کاراکتر داشته باشد و شامل حداقل یک حرف بزرگ، یک حرف کوچک، یک عدد و یک کاراکتر ویژه (!@#$%^&*) باشد."
+        };
     }
-
-    $.ajax({
-        url: window.location.origin.replace("3000", "5000") + "/api/cloud/sharepoint/companyMatching/all",
-        method: "get",
-        headers: {
-            Authorization: "Bearer " + access_token
-        },
-        contentType: "application/json", // Set the content type
-        success: function (response) {
-
-
-            $.each(response, function (index, value) {
-                // $("<li>New Item</li>").appendTo("#myList");
-                $('<li>'
-                    + '<span class="filesize"><i>Date:</i><b>' + value['date'] + '</b></span>'
-                    + '<span class="filesize"><i>Matching Number:</i><b>' + value['matchNumber'] + '</b></span>'
-                    + '<span class="filesize"><i>Type:</i><b style="color: brown;">company_matching</b></span>'
-                    + '<span class="file-link"><i>Result:</i><b><textarea>' + JSON.stringify(value["result"]) + '</textarea></b></span>'
-                    + '<span class="file-link"><i>files:</i><b><textarea>' + value['processedFiles'] + '</textarea></b></span>'
-                    // + '<span class="copy-link"><b>Details ..</b></span>'
-                    + '</li>').appendTo("#history_result");
-            });
-
-
-
-
-
-        },
-        error: function (xhr, status, error) {
-            if (xhr.status == 401 || xhr.status == 403) {
-                eraseCookie("access_token")
-                location.href = 'login.html';
-            }
-            alert("faild!")
-            console.error("Error fetching data:", error);
-        }
-    });
-
-
 }
+
+

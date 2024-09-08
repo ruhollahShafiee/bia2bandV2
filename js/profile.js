@@ -1,3 +1,7 @@
+var question_answer_id_temp = "";
+var question_id_tmp = 0;
+
+
 (function ($) {
 	"use strict";
 	var fullHeight = function () {
@@ -46,8 +50,86 @@ function getAllCategories() {
 		method: "get",
 		// contentType: "application/json", // Set the content type
 		success: function (response) {
+
+
+			let response2=[];
+			for(let r of response){
+				if(r.id == 3){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":1
+					})
+				}
+				if(r.id == 1003){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":2
+					})
+				}
+				if(r.id == 2){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":3
+					})
+				}
+				if(r.id == 1){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":4
+					})
+				}
+				if(r.id == 2003){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":5
+					})
+				}
+				if(r.id == 2009){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":6
+					})
+				}
+				if(r.id == 2006){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":7
+					})
+				}
+				if(r.id == 2004){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":7
+					})
+				}
+				if(r.id == 2008){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":7
+					})
+				}
+				if(r.id == 2005){
+					response2.push({
+						"id":r.id,
+						"name":r.name,
+						"order":7
+					})
+				}
+			}
+
+			response2.sort((a, b) => a.order - b.order);
+
 			let optoins = '<option value=null selected>انتخاب کنید</option>';
-			for (category of response) {
+			for (category of response2) {
 				optoins += '<option value="' + category.id + '">' + category.name + '</option>'
 			}
 			$("#categorySelect").empty();
@@ -146,7 +228,7 @@ function getProfileInformation() {
 			$("#instagramLinkTwo").val(response.instagramLinkTwo);
 			$("#aboutMesasas").val(response.aboutMe);
 			$("#extraDescription").text(response.extraDescription);
-			$("#myGroupp").attr("onclick","location.href = 'personal_group.html#groupId="+response.groupId+"';")
+			$("#myGroupp").attr("onclick", "location.href = 'personal_group.html#groupId=" + response.groupId + "';")
 			if (response.skills != null && response.skills.length != 0) {
 				loadSkill(response.skills[0].id)
 			}
@@ -169,6 +251,15 @@ function getProfileInformation() {
 			else {
 				$("#userConfirmedNot").css("display", "none");
 				$("#userConfirmed").css("display", "inline-block");
+			}
+
+			if (response.informationCompleted == null || response.informationCompleted == false) {
+				$("#userComplate").css("display", "none");
+				$("#userComplateNot").css("display", "inline-block");
+			}
+			else {
+				$("#userComplateNot").css("display", "none");
+				$("#userComplate").css("display", "inline-block");
 			}
 
 			buildWorkSample((!haveSkill ? [] : response.skills), response.selectMediaIdsWorksamples)
@@ -418,6 +509,60 @@ function toggleCheck(clickedObj) {
 
 }
 
+
+function saveOrUpdateAnswerMute(questionId, anserId, isNew) {
+	let haveFlag = $("#hidden_have_" + anserId).val();
+	if (haveFlag == "") {
+		haveFlag = false;
+	}
+	let answer = $("#answer_" + anserId).val();
+
+	let data = {
+		"questionId": questionId,
+		"answerId": anserId.split("_")[anserId.split("_").length - 1],
+		"haveFlag": haveFlag,
+		"answer": answer,
+		"skillId": $("#skillId").val()
+	}
+
+	let access_token = getCookie("access_token");
+	if (access_token == undefined || access_token == "" || access_token == null) {
+		location.href = 'login.html';
+	}
+
+	let urlvar = "backend/api/answer/update/answer"
+	if (isNew) {
+		urlvar = "backend/api/answer/update/newQuestion/answer"
+	}
+
+	$.ajax({
+		url: urlvar,
+		method: "PUT",
+		headers: {
+			Authorization: "Bearer " + access_token
+		},
+		data: JSON.stringify(data),
+		contentType: "application/json", // Set the content type
+		success: function (response) {
+			$("#hidden_have_" + anserId).attr("id", "hidden_have_" + questionId + "_" + response);
+			$("#answer_" + anserId).attr("id", "answer_" + questionId + "_" + response);
+			$("#nothave_" + anserId).attr("id", "nothave_" + questionId + "_" + response);
+			$("#questionsMedia_" + anserId).attr("id", "questionsMedia_" + questionId + "_" + response);
+			$("#prepareUploadMedia_" + anserId).attr("onclick", "prepareUploadMedia('" + questionId + "_" + response + "'," + response + ")");
+			$("#prepareUploadMedia_" + anserId).attr("id", "prepareUploadMedia_" + questionId + "_" + response);
+			$("#have_" + anserId).attr("id", "have_" + questionId + "_" + response);
+			$("#click_" + anserId).attr("onclick", "saveOrUpdateAnswer(" + questionId + ",'" + questionId + "_" + response + "',false)");
+			$("#click_" + anserId).attr("id", "click_" + questionId + "_" + response);
+			loadSkill($("#skillId").val())
+
+		},
+		error: function (xhr, status, error) {
+
+
+		}
+	});
+}
+
 function saveOrUpdateAnswer(questionId, anserId, isNew) {
 	let haveFlag = $("#hidden_have_" + anserId).val();
 	if (haveFlag == "") {
@@ -464,6 +609,10 @@ function saveOrUpdateAnswer(questionId, anserId, isNew) {
 			alert("انجام شد!")
 		},
 		error: function (xhr, status, error) {
+
+			if (xhr.status == 500) {
+				alert("برای ثبت مهارت ابتدا بایستی دکمه ی ذخیره را فشار دهید پس جوابی را ثبت کنید")
+			}
 
 			console.log(error)
 
@@ -1314,6 +1463,8 @@ function buildTemplateQuestion(categorId) {
 			let questionsDiv = "";
 			let questions = response;
 
+
+
 			for (question of questions) {
 
 				questionsDiv += '<div class="col-md-12 mt-4">' +
@@ -1326,6 +1477,8 @@ function buildTemplateQuestion(categorId) {
 					'</div>';
 
 				let question_answer_id = question.id + '_0';
+				question_answer_id_temp = question_answer_id
+				question_id_tmp = question.id
 				let questionTargetMedia = 'questionsMedia_' + question_answer_id
 				questionsDiv += '<div class="row mt-3">' +
 					'<div class="col-md-2 pt-3 d-flex">' +
@@ -1397,6 +1550,7 @@ function buildTemplateQuestion(categorId) {
 
 			$("#questionsDiv").empty();
 			$("#questionsDiv").append(questionsDiv);
+
 		},
 		error: function (xhr, status, error) {
 
@@ -1504,8 +1658,15 @@ function saveSkill(isNew) {
 		contentType: "application/json", // Set the content type
 		data: JSON.stringify(payload),
 		success: function (response) {
+			if($("#skillId").val() == ""){
+				$("#skillId").val(response.id)
+				saveOrUpdateAnswerMute(question_id_tmp, question_answer_id_temp, true)
+				
+			}
 			$("#skillId").val(response.id)
 			buildSkill(response.skills)
+			
+			
 
 		},
 		error: function (xhr, status, error) {
@@ -1538,7 +1699,7 @@ function removeSkill(thisObject, skillId) {
 		// contentType: "application/json", // Set the content type
 		// data: JSON.stringify(payload),
 		success: function (response) {
-			if ($("#"+thisObject).parent().children().length == 1) {
+			if ($("#" + thisObject).parent().children().length == 1) {
 				$("#skillId").val("")
 				$("#mediasIdsId").val(JSON.stringify([]))
 				$("#videoSkill").empty()
@@ -1550,7 +1711,7 @@ function removeSkill(thisObject, skillId) {
 				$("#workSamplesDiv").empty()
 				$("#questionsDiv").empty();
 			}
-			$("#"+thisObject).remove()
+			$("#" + thisObject).remove()
 			$("#ConfirmPopUp").modal("toggle");
 
 		},

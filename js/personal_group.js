@@ -1097,7 +1097,11 @@ function saveOrUpdateAnswer(questionId, anserId, isNew) {
 		},
 		error: function (xhr, status, error) {
 
-			console.log(error)
+			if(xhr.status  == 500){
+				alert("برای ثبت مهارت ابتدا بایستی دکمه ی ذخیره مهارت را فشار دهید پس جوابی را ثبت کنید")
+			}
+
+			
 
 		}
 	});

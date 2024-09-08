@@ -94,4 +94,35 @@ function getAllCities(calbackSuccess,calbackError) {
 }
 
 
+
+
+function addInterseted(thisObj,id,type){
+
+    let access_token = getCookie("access_token");
+    if (access_token == undefined || access_token == "" || access_token == null) {
+        location.href = 'login.html';
+    }
+
+    $.ajax({
+        url: "backend/api/interested/add/"+id+"/"+type,
+        method: "POST",
+        headers: {
+            Authorization: "Bearer " + access_token
+        },
+        success: function (response) {
+
+           alert("اضافه شد")
+
+        },
+        error: function (xhr, status, error) {
+
+            if(xhr.status  == 403 || xhr.status  == 401){
+				alert("برای افزودن به علاقمندی بایستی وارد سایت بشوید")
+			}
+
+        }
+    });
+}
+
+
 getUserName();

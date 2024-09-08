@@ -9,8 +9,8 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/nav.css" rel="stylesheet">
     <link href="css/profile.css" rel="stylesheet">
-    <link href="css/personal_group.css" rel="stylesheet">
     <link href="css/admin_dashboard.css" rel="stylesheet">
+    <link href="css/messageing_dashboard.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/assets/icon/Bia2band1.svg" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
@@ -42,10 +42,11 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
     <script src="js/utils.js"></script>
     <script src="js/general.js"></script>
+    <script src="js/admin_dashboard.js"></script>
+    <script src="js/profile.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/media.js"></script>
-    <script src="js/business.js"></script>
-    <script src="js/personal_group.js"></script>
+    <script src="js/messageing_dashboard.js"></script>
     <script type="module">
         import Autocomplete from "https://cdn.jsdelivr.net/gh/lekoala/bootstrap5-autocomplete@master/autocomplete.js";
         let access_token = getCookie("access_token");
@@ -107,28 +108,26 @@
                         <a class="nav-link " href="index.html">صفحه نخست</a>
                     </li>
                     <li class='nav-item dropdown '>
-                        <a class="nav-link dropdown-toggle active" id="navbarDarkDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle active" href="pishkhan.html"
+                            id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             داشبورد
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li class='dropdown-item'>
-                                <a href="pishkhan.html" onclick="" class="aMenu">
-                                    پنل من
-                                </a>
+                            <li class='dropdown-item'><a href="profile_personal.html#MyPersonalInfo" onclick=""
+                                    class="aMenu">مشخصات شخصی
+                                    من</a></li>
+                            <li class='dropdown-item'> <a href="profile_personal.html#contactWithMe"
+                                    class="aMenu">ارتباط با من</a></li>
+                            <li class='dropdown-item'> <a href="profile_personal.html#aboutMe" class="aMenu">درباره
+                                    من</a></li>
+                            <li class='dropdown-item'> <a href="profile_personal.html#spskill" class="aMenu">اطلاعات
+                                    تخصصی من</a></li>
+                            <li class='dropdown-item'> <a href="profile_personal.html#compaleteIfno"
+                                    class="aMenu">اطلاعات تکمیلی من</a>
                             </li>
-                            <li class='dropdown-item'>
-                                <a href="#MyPersonalInfo" onclick="" class="aMenu">
-                                    مشخصات شخصی
-                                    من
-                                </a>
-                            </li>
-                            <li class='dropdown-item'> <a href="#contactWithMe" class="aMenu">ارتباط با من</a></li>
-                            <li class='dropdown-item'> <a href="#aboutMe" class="aMenu">درباره من</a></li>
-                            <li class='dropdown-item'> <a href="#spskill" class="aMenu">اطلاعات تخصصی من</a></li>
-                            <li class='dropdown-item'> <a href="#compaleteIfno" class="aMenu">اطلاعات تکمیلی من</a>
-                            </li>
-                            <li class='dropdown-item'> <a href="#sampleWork" class="aMenu">نمونه کارها</a></li>
+                            <li class='dropdown-item'> <a href="profile_personal.html#sampleWork" class="aMenu">نمونه
+                                    کارها</a></li>
                             <li class='dropdown-item'> <a href="profile_view.html" class="aMenu">نمای کلی
                                     پروفایل</a></li>
                             <li class='dropdown-item'><a href="profile.html" class="aMenu">کسب و کار من</a></li>
@@ -190,7 +189,6 @@
 
 
         <div class="row mt-5 mx-auto">
-
             <div class="col-md-4 px-4">
                 <div class="row rounded-lg mt-3 px-0 bg-white rounded-3xl"
                     style="min-height: 23rem !important;   border: solid #b3b4b5 1px;">
@@ -242,9 +240,10 @@
                                                 fill="black" />
                                         </svg>
                                     </span>
-                                    <span class="ms-2">
+                                    <a href="#" onclick="location.href = 'pishkhan.html';"
+                                        style="color: black;text-decoration: none;" class="ms-2">
                                         پیشخوان من
-                                    </span>
+                                    </a>
 
                                 </button>
 
@@ -322,10 +321,11 @@
                                             </svg>
                                         </span>
 
-                                        <span class="ms-2">
+                                        <a href="#" onclick="location.href = 'ticket_dashboard.html';"
+                                            style="color: black;text-decoration: none;" class="ms-2">
                                             تیکت پشتیبانی
+                                        </a>
 
-                                        </span>
                                     </div>
                                     <span class="float-end  me-2">
                                         <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
@@ -434,9 +434,11 @@
                                                     fill="black" />
                                             </svg>
                                         </span>
-                                        <a href="#" onclick="location.href = 'messageing_dashboard.html';" style="color: black;text-decoration: none;" class="ms-2">
+                                        <a href="#" onclick="location.href = 'messageing_dashboard.html';"
+                                            style="color: black;text-decoration: none;" class="ms-2">
                                             درخواست ها و پیام ها
                                         </a>
+
                                     </div>
                                     <span class="float-end me-2">
                                         <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
@@ -539,10 +541,10 @@
                                                     fill="black" />
                                             </svg>
                                         </span>
-                                        <span class="ms-2">
+                                        <a href="#" onclick="location.href = 'instersted_dashboard.html';"
+                                            style="color: black;text-decoration: none;" class="ms-2">
                                             علاقه مندی ها
-
-                                        </span>
+                                        </a>
                                     </div>
                                     <span class="float-end me-2">
                                         <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
@@ -576,7 +578,6 @@
                                 <button class="btn btn-toggle rounded border-0 w-100 collapsed"
                                     data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                                     <div class="d-inline-flex float-start">
-
                                         <span>
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -591,8 +592,8 @@
                                                     fill="black" />
                                             </svg>
                                         </span>
-                                        <a href="#" onclick="location.href = 'personal_group.html#MyPersonalInfo';"
-                                            style="color: black;" class="ms-2">
+                                        <a href="#" id="myGroupp" onclick="location.href = 'personal_group.html';"
+                                            style="color: black;text-decoration: none;" class="ms-2">
                                             گروه من
                                         </a>
                                     </div>
@@ -620,857 +621,364 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-8  col-sm-12">
-                <div class="rounded-lg p-1 bg-white rounded-3xl ">
-                    <div class="row">
-                        <div class="col-12 mt-n5 mx-auto">
-                            <div id="groupBackground"
-                                class="pt-5 rounded-lg shadow-lg bg-white mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders -mt-16 sticky backgound_banner2 height_16rem">
-                                <i class="fa-regular fa-pen-to-square me-4 fa-2x float-end hover-shadow"
-                                    style="color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                <div class="row p-3 ">
+                    <div
+                        class="col-12 pt-5 pb-5 ps-4 rounded-lg p-1 bg-white rounded-3xl mt-n5 mx-auto iranYekanLightBold">
+                        <div class="row">
+                            <h5 class="ms-2">درخواست ها و پیام ها</h5>
 
-                                <div class="pt-5  d-flex margin_top_6rem">
+                            <p class="ms-2 mt-4" style="color: gray;">
+
+                                توضیحات اضافه توضیحات اضافه توضیحات اضافه توضیحات
+                                اضافه
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8"></div>
+                            <div class="col-md-3 mt-5 form-group">
+                                <button type="button" onclick="$('#messageCreation').modal('toggle')"
+                                    style="  border-radius: 0.9rem;"
+                                    class="btn btn-dark float-start pt-2 pb-2  text-sm mx-auto px-3 w-100">
+                                    <span style="font-weight: bolder;" class="p_custom iranYekanLight px-2">
+                                        ثبت پیام
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+
+                        <!-- Modal invatec code -->
+                        <div class="modal fade" id="messageCreation" tabindex="-1"
+                            aria-labelledby="messageCreationModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span data-bs-dismiss="modal" aria-label="Close">
+                                            <svg width="32" height="32" viewBox="0 0 46 46" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M22.9997 43.6043C11.6338 43.6043 2.39551 34.366 2.39551 23.0002C2.39551 11.6343 11.6338 2.396 22.9997 2.396C34.3655 2.396 43.6038 11.6343 43.6038 23.0002C43.6038 34.366 34.3655 43.6043 22.9997 43.6043ZM22.9997 5.271C13.2247 5.271 5.27051 13.2252 5.27051 23.0002C5.27051 32.7752 13.2247 40.7293 22.9997 40.7293C32.7747 40.7293 40.7288 32.7752 40.7288 23.0002C40.7288 13.2252 32.7747 5.271 22.9997 5.271Z"
+                                                    fill="black" fill-opacity="0.7" />
+                                                <path
+                                                    d="M17.5763 29.8616C17.2121 29.8616 16.8479 29.7274 16.5604 29.4399C16.0046 28.8841 16.0046 27.9641 16.5604 27.4083L27.4088 16.5599C27.9646 16.0041 28.8846 16.0041 29.4404 16.5599C29.9963 17.1158 29.9963 18.0358 29.4404 18.5916L18.5921 29.4399C18.3238 29.7274 17.9404 29.8616 17.5763 29.8616Z"
+                                                    fill="black" fill-opacity="0.7" />
+                                                <path
+                                                    d="M28.4246 29.8616C28.0604 29.8616 27.6963 29.7274 27.4088 29.4399L16.5604 18.5916C16.0046 18.0358 16.0046 17.1158 16.5604 16.5599C17.1163 16.0041 18.0363 16.0041 18.5921 16.5599L29.4404 27.4083C29.9963 27.9641 29.9963 28.8841 29.4404 29.4399C29.1529 29.7274 28.7888 29.8616 28.4246 29.8616Z"
+                                                    fill="black" fill-opacity="0.7" />
+                                            </svg>
+                                        </span>
+                                        <h6 class="modal-title fs-10 iranYekanLightBold ms-3" id="messageCreationModal">
+                                            بیا تو بند/ ثبت پیام
+                                        </h6>
 
 
-                                    <img class="mt-3 profile_banner rounded-circle ProfileImageId"
-                                        id="groupProfileImageId" src="assets/images/avatar.png">
-                                    <input type="hidden" id="businessBackgroundId" />
-                                    <input type="hidden" id="businessProfileId" />
-                                    <i class="fa-regular margin_left_right_for_edit_business_profile fa-pen-to-square fa-2x hover-shadow"
-                                        style="color: white;" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal2"></i>
-
-                                </div>
-
-                                <!-- Modal invatec code -->
-                                <div class="modal fade" id="ConfirmPopUp" tabindex="-1"
-                                    aria-labelledby="ConfirmPopUpModal" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="ConfirmPopUpModal">
-                                                    تاییدیه
-                                                </h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-
-                                            <div class="modal-body">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">انصراف</button>
-                                                <button type="button" id="ConfirmPopUpBtn" onclick=""
-                                                    class="btn btn-primary">تایید</button>
-                                            </div>
-
-                                        </div>
                                     </div>
-                                </div>
 
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8">
+                                                <label for="autocompleteRegularInput" class="form-label">
+                                                    گیرنده
+                                                </label>
+                                                <input type="text" class="form-control" id="autocompleteRegularInput"
+                                                    placeholder="به فارسی بنویسید" />
+                                                <label class="iranYekanLightBold " for="subject">
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">تغییر بکگراند</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                </label>
                                             </div>
-                                            <form method="POST" action="#" enctype="multipart/form-data"
-                                                id="businessUploadBackground">
-                                                <div class="modal-body">
-                                                    <input class="form-control" type="file" name="file" id="formFile">
-                                                </div>
-                                                <input type="hidden" name="id" />
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">انصراف</button>
-                                                    <button type="button"
-                                                        onclick="updateBackgroundForm($(this),$('#businessUploadBackground')[0])"
-                                                        class="btn btn-primary">تغییر</button>
-                                                </div>
-                                            </form>
+                                            <div class="col-md-2"></div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="modal fade" id="generalWarning" tabindex="-1"
-                                    aria-labelledby="generalWarningW" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="generalWarningW">هشدار</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body" id="generalWarningMsg">
-
-                                            </div>
-
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">انصراف</button>
-                                                <button id="generalConfirmBtt" type="button" onclick=""
-                                                    class="btn btn-primary">تغییر</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal2" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel2">تغییر نمایه</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <form method="POST" action="#" enctype="multipart/form-data"
-                                                id="businessUploadProfile">
-                                                <div class="modal-body">
-                                                    <input class="form-control" type="file" name="file" id="formFile">
+                                        <div class="row mt-4">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8">
+                                                <label for="content" class="iranYekanLightBold">پیام</label>
+                                                <div class="input-group">
+                                                    <textarea
+                                                        placeholder=" مشکل در این قسمت شرح دادده میشود. مشکل در این قسمت شرح دادده میشود."
+                                                        class="form-control iranYekanLight" id="content"
+                                                        rows="4"></textarea>
                                                 </div>
-                                                <input type="hidden" name="id" id="profileImageId" />
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">انصراف</button>
-                                                    <button type="button"
-                                                        onclick="updateProfileForm($(this),$('#businessUploadProfile')[0])"
-                                                        class="btn btn-primary">تغییر</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <!-- Modal for load User -->
-                                <div class="modal fade" id="modalLoadUser" tabindex="-1"
-                                    aria-labelledby="modalLoadUser2" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="modalLoadUser2">افزودن کاربر</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
                                             </div>
+                                            <div class="col-md-2"></div>
+                                        </div>
 
-                                            <div class="modal-body">
-                                                <div class="row mb-3 g-3">
-                                                    <div class="col-md-12">
-                                                        <label for="autocompleteRegularInput" class="form-label">
-                                                            جستجوی نام کاربران
-                                                        </label>
-                                                        <input type="text" class="form-control"
-                                                            id="autocompleteRegularInput"
-                                                            placeholder="Type something" />
+                                    </div>
+                                    <div class="modal-footer" style="  display: block !important;">
+
+                                        <div class="row mt-2">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8">
+                                                <button type="button" onclick="createMessage($(this))"
+                                                    style="  border-radius: 0.9rem;"
+                                                    class="btn btn-secondary pt-2 pb-2  text-sm mx-auto px-3 w-100">
+                                                    <span style="font-weight: bolder;"
+                                                        class="p_custom iranYekanLight px-2">
+                                                        ارسال
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal invatec code -->
+                        <div class="modal fade" id="messageBox" tabindex="-1" aria-labelledby="messageBoxModal"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span data-bs-dismiss="modal" aria-label="Close">
+                                            <svg width="32" height="32" viewBox="0 0 46 46" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M22.9997 43.6043C11.6338 43.6043 2.39551 34.366 2.39551 23.0002C2.39551 11.6343 11.6338 2.396 22.9997 2.396C34.3655 2.396 43.6038 11.6343 43.6038 23.0002C43.6038 34.366 34.3655 43.6043 22.9997 43.6043ZM22.9997 5.271C13.2247 5.271 5.27051 13.2252 5.27051 23.0002C5.27051 32.7752 13.2247 40.7293 22.9997 40.7293C32.7747 40.7293 40.7288 32.7752 40.7288 23.0002C40.7288 13.2252 32.7747 5.271 22.9997 5.271Z"
+                                                    fill="black" fill-opacity="0.7" />
+                                                <path
+                                                    d="M17.5763 29.8616C17.2121 29.8616 16.8479 29.7274 16.5604 29.4399C16.0046 28.8841 16.0046 27.9641 16.5604 27.4083L27.4088 16.5599C27.9646 16.0041 28.8846 16.0041 29.4404 16.5599C29.9963 17.1158 29.9963 18.0358 29.4404 18.5916L18.5921 29.4399C18.3238 29.7274 17.9404 29.8616 17.5763 29.8616Z"
+                                                    fill="black" fill-opacity="0.7" />
+                                                <path
+                                                    d="M28.4246 29.8616C28.0604 29.8616 27.6963 29.7274 27.4088 29.4399L16.5604 18.5916C16.0046 18.0358 16.0046 17.1158 16.5604 16.5599C17.1163 16.0041 18.0363 16.0041 18.5921 16.5599L29.4404 27.4083C29.9963 27.9641 29.9963 28.8841 29.4404 29.4399C29.1529 29.7274 28.7888 29.8616 28.4246 29.8616Z"
+                                                    fill="black" fill-opacity="0.7" />
+                                            </svg>
+                                        </span>
+                                        <h6 class="modal-title fs-10 iranYekanLightBold ms-3" id="messageBoxModal">
+                                            بیا تو بند/ تاریخچه پیام
+                                        </h6>
+
+
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="mesgs">
+                                                    <div class="msg_history" id="msg_history">
+                                                        <div class="incoming_msg">
+                                                            <div class="incoming_msg_img">
+                                                                <img class="chatUserImage"
+                                                                    src="https://ptetutorials.com/images/user-profile.png"
+                                                                    alt="sunil">
+                                                            </div>
+                                                            <div class="received_msg">
+                                                                <div class="received_withd_msg">
+                                                                    <p>Test which is a new approach to have all
+                                                                        solutions</p>
+                                                                    <span class="time_date"> 11:01 AM | June 9</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="outgoing_msg">
+                                                            <div class="sent_msg">
+                                                                <p>Test which is a new approach to have all
+                                                                    solutions</p>
+                                                                <span class="time_date"> 11:01 AM | June 9</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="type_msg">
+                                                        <input type="hidden" name="toArtistUsername"
+                                                            id="toArtistUsername" />
+                                                        <input type="hidden" name="parentID" id="parentID" />
+                                                        <div class="input_msg_write">
+                                                            <input type="text" class="write_msg form-control"
+                                                                id="sendMesgInput" placeholder="پیامی بنویسید" />
+                                                            <button class="msg_send_btn" type="button"
+                                                                onclick="sendMessageBox()">
+                                                                <i style="margin-top: 9px;"
+                                                                    class="fa-solid fa-paper-plane fa-rotate-270"
+                                                                    aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">انصراف</button>
-                                                <button type="button"
-                                                    onclick="addUserTogroup($('#ac-menu-1-0').attr('data-value'))"
-                                                    class="btn btn-primary">افزودن</button>
-                                            </div>
 
                                         </div>
-                                    </div>
-                                </div>
 
-                                <!-- media group form -->
-                                <div class="modal fade" id="skillMediaOverview" tabindex="-1"
-                                    aria-labelledby="skillMedaiModal" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="skillMedaiModal">افزودن ویدیو/تصویر
-                                                </h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <form method="POST" action="#" enctype="multipart/form-data"
-                                                id="skillMediaForm">
-                                                <div class="modal-body">
-                                                    <input class="form-control" type="file" name="file" id="formFile2">
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">انصراف</button>
-                                                    <button type="button"
-                                                        onclick="addMediaFormTOGroup($(this),$('#skillMediaForm')[0])"
-                                                        class="btn btn-primary">اپلود</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <!-- media skill form -->
-                                <div class="modal fade" id="skillMediaToGroupOverview" tabindex="-1"
-                                    aria-labelledby="skillMediaToGroupOverviewModal" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="skillMediaToGroupOverviewModal">افزودن
-                                                    ویدیو/تصویر
-                                                </h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <form method="POST" action="#" enctype="multipart/form-data"
-                                                id="skillMediaToGroupOverviewForm">
-                                                <div class="modal-body">
-                                                    <input class="form-control" type="file" name="file" id="formFile2">
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">انصراف</button>
-                                                    <button type="button"
-                                                        onclick="addMediaFormTOSkill($(this),$('#skillMediaToGroupOverviewForm')[0])"
-                                                        class="btn btn-primary">اپلود</button>
-                                                </div>
-                                            </form>
-                                        </div>
                                     </div>
-                                </div>
+                                    <div class="modal-footer" style="  display: block !important;">
 
-                                <!-- upload media answer -->
-                                <div class="modal fade" id="anserMediaOverview" tabindex="-1"
-                                    aria-labelledby="anserMediaOverviewModal" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="anserMediaOverviewModal">افزودن
-                                                    ویدیو/تصویر
-                                                </h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <form method="POST" action="#" enctype="multipart/form-data"
-                                                id="ansMediaForm">
-                                                <div class="modal-body">
-                                                    <input class="form-control" type="file" name="file" id="formFile2">
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">انصراف</button>
-                                                    <button type="button" id="anserMediaOverviewBtn"
-                                                        onclick="addMediaFormTOAnser($(this),answerIdd,$('#ansMediaForm')[0])"
-                                                        class="btn btn-primary">اپلود</button>
-                                                </div>
-                                            </form>
-                                        </div>
+
+
                                     </div>
+
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
-                    <div id="MyPersonalInfo"
-                        class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-5 sticky">
-                        <div class="producer-title mt-4_costum">
-                            <h3
-                                class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
-                                اعضای گروه
-                            </h3>
 
-                            <span class="alert alert-danger " id="groupConfirmedNot" role="alert"
-                                style="display: none;font-size: 10px;">
-                                در انتظار تایید ادمین
-                            </span>
-                            <span class="alert alert-success " id="groupConfirmed" role="alert"
-                                style="display: none;font-size: 10px;">
-                                تایید شده برای نمایش
-                            </span>
+                </div>
+                <div class="row mt-3 mx-auto sticky  ">
 
-                        </div>
-                        <div class="col-md-12 mt-4">
-
-                            <div class="row" id="memberdivs">
-                                <div class=" text-center col-md-2 col-xs-12">
-                                    <img src="/assets/images/Group 33932.png"
-                                        class="rounded-circle mx-auto memberImageSize">
-                                    <p class="text-center iranYekanLightBold p_custom">
-                                        یلدا محبی
-                                    </p>
-                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
-                                </div>
-                                <div class="text-center col-md-2 col-xs-12">
-                                    <img src="/assets/images/Ellipse 420.png"
-                                        class="rounded-circle mx-auto memberImageSize">
-                                    <p class="text-center iranYekanLightBold p_custom">
-                                        شیدا یداللهی
-                                    </p>
-                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
-                                </div>
-                                <div class="text-center col-md-2 col-xs-12">
-                                    <img src="/assets/images/Ellipse 421.png"
-                                        class="rounded-circle mx-auto memberImageSize">
-                                    <p class="text-center iranYekanLightBold p_custom">
-                                        حسین مقدم
-                                    </p>
-                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
-                                </div>
-                                <div class="text-center col-md-2 col-xs-12">
-                                    <img src="/assets/images/Ellipse 422.png"
-                                        class="rounded-circle mx-auto memberImageSize">
-                                    <p class="text-center iranYekanLightBold p_custom">
-                                        آرش مقدم
-                                    </p>
-                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
-                                </div>
-                                <div class="text-center col-md-2 col-xs-12">
-                                    <img src="/assets/images/Ellipse 423.png"
-                                        class="rounded-circle mx-auto memberImageSize">
-                                    <p class="text-center iranYekanLightBold p_custom">
-                                        اذیتا حچت
-                                    </p>
-                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
-                                </div>
-                                <div class="text-center col-md-2 col-xs-12">
-                                    <img src="/assets/images/Ellipse 425.png"
-                                        class="rounded-circle mx-auto memberImageSize">
-                                    <p class="text-center iranYekanLightBold p_custom">
-                                        محسن شمس
-                                    </p>
-                                    <i class="fa-solid fa-circle-minus bi bi-end-fill position-absolute fa-2x hover-shadow memberRemoveIcon"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal2"></i>
-                                </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm bg-white border-0">
+                            <div class="card-title mx-auto px-auto ">
+                                <p class="px-auto text-center mt-5">
+                                    <svg class="mx-auto" width="46" height="46" viewBox="0 0 46 46" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M32.583 40.7293H13.4163C6.42051 40.7293 2.39551 36.7043 2.39551 29.7085V16.2918C2.39551 9.296 6.42051 5.271 13.4163 5.271H22.9997C23.7855 5.271 24.4372 5.92266 24.4372 6.7085C24.4372 7.49433 23.7855 8.146 22.9997 8.146H13.4163C7.93467 8.146 5.27051 10.8102 5.27051 16.2918V29.7085C5.27051 35.1902 7.93467 37.8543 13.4163 37.8543H32.583C38.0647 37.8543 40.7288 35.1902 40.7288 29.7085V22.0418C40.7288 21.256 41.3805 20.6043 42.1663 20.6043C42.9522 20.6043 43.6038 21.256 43.6038 22.0418V29.7085C43.6038 36.7043 39.5788 40.7293 32.583 40.7293Z"
+                                            fill="black" />
+                                        <path
+                                            d="M22.9997 24.6673C21.3897 24.6673 19.7605 24.169 18.5147 23.1532L12.5155 18.3615C11.9022 17.8632 11.7872 16.9623 12.2855 16.349C12.7838 15.7356 13.6846 15.6207 14.298 16.119L20.2971 20.9107C21.7538 22.0798 24.2263 22.0798 25.683 20.9107C26.2963 20.4123 27.1972 20.5081 27.6955 21.1406C28.1938 21.754 28.098 22.674 27.4655 23.1532C26.2388 24.169 24.6097 24.6673 22.9997 24.6673Z"
+                                            fill="black" />
+                                        <path
+                                            d="M32.0853 18.6873C31.2994 18.6873 30.7628 18.4189 30.4178 18.1698C29.7853 17.7098 28.8078 16.5598 29.3828 14.0298L29.4786 13.6273C29.517 13.474 29.402 13.1098 29.3062 12.9948L28.6353 12.3239C27.5045 11.1739 27.0636 9.83229 27.447 8.62479C27.8303 7.43645 28.9611 6.59313 30.552 6.32479L31.2803 6.2098C31.4145 6.17146 31.6828 5.97979 31.7595 5.84563L32.2961 4.75311C33.0436 3.23895 34.1936 2.37646 35.4586 2.37646C36.7236 2.37646 37.8736 3.23895 38.6211 4.75311L39.1578 5.84563C39.2153 5.96063 39.5028 6.17146 39.637 6.2098L40.3653 6.32479C41.9561 6.59313 43.087 7.43645 43.4703 8.62479C43.8536 9.81312 43.432 11.1548 42.282 12.3239L41.6111 12.9948C41.5153 13.1098 41.4003 13.474 41.4386 13.6273L41.5345 14.0298C42.1095 16.5598 41.132 17.7098 40.4995 18.1698C39.867 18.6298 38.487 19.1856 36.2828 17.8631L35.8036 17.5756C35.6695 17.499 35.2861 17.499 35.152 17.5756L34.6536 17.8631C33.6186 18.4765 32.7561 18.6873 32.0853 18.6873ZM35.4394 5.27062C35.4203 5.28979 35.152 5.48144 34.8837 6.03728L34.347 7.12979C33.887 8.06896 32.7944 8.87396 31.7786 9.04646L31.0503 9.16145C30.437 9.25728 30.2262 9.46813 30.207 9.50647C30.207 9.5448 30.2644 9.85144 30.7053 10.2923L31.3761 10.9631C32.162 11.7681 32.5644 13.1481 32.3153 14.2406L32.2195 14.6431C32.0661 15.3331 32.1236 15.6973 32.162 15.8314C32.2003 15.7931 32.5453 15.7548 33.1778 15.3715L33.6761 15.0839C34.7303 14.4514 36.2445 14.4514 37.2986 15.0839L37.7778 15.3715C38.4103 15.7548 38.7361 15.7931 38.8511 15.7931C38.8319 15.7356 38.9086 15.3906 38.7361 14.6431L38.6403 14.2406C38.3911 13.1289 38.7936 11.7681 39.5795 10.9631L40.2503 10.2923C40.6911 9.85144 40.7487 9.54478 40.7487 9.48728C40.7295 9.44895 40.5186 9.2573 39.9053 9.1423L39.177 9.0273C38.142 8.8548 37.0686 8.0498 36.6086 7.11063L36.072 6.03728C35.7653 5.46228 35.5161 5.28979 35.4394 5.27062Z"
+                                            fill="black" />
+                                    </svg>
+                                </p>
+                                <h6 class="mt-3 iranYekanLightBold"> پیام های ارسال شده </h6>
                             </div>
-                            <div class="row">
-                                <div class="col-md-8"></div>
-                                <div class="col-md-4 form-group">
-                                    <button type="button" onclick="$('#modalLoadUser').modal('toggle')"
-                                        class="btn btn-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 w-100">
-                                        <span class="p_custom px-2">
-                                            افزودن عضو
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                            <h3
-                                class="  mt-4 iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
-                                اطلاعات گروه
-                            </h3>
-                            <div class="row mt-5_costom">
-
-                                <div class="col-md-7  col-xs-12">
-                                    <div class="form-group w_75_costum">
-                                        <label for="groupName" class="iranYekanLightBold">نام گروه</label>
-                                        <input type="text" class="form-control  rounded-end-3 text-gray-400 inputHeight"
-                                            id="groupName" />
-                                        <input type="hidden" name="groupId" id="groupId" />
-                                    </div>
-
-                                </div>
-                                <div class="col-md-5 mt-5_mobile mx-auto col-xs-12">
-                                    <div class="form-group w_75_costum">
-                                        <label class="iranYekanLightBold " for="createDurationGroup">مدت زمان تشکیل
-                                            گروه</label>
-                                        <input type="text" class="form-control iranYekanLight inputHeight"
-                                            id="createDurationGroup" placeholder="4">
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="row mt-5">
-                                <div class="col-md-1 col-xs-12"></div>
-                                <div class="col-md-4 col-xs-12">
-                                    <div id="videoGroup"></div>
-
-                                    <div class="row mt-3">
-                                        <button type="button" data-bs-toggle="modal"
-                                            data-bs-target="#skillMediaOverview"
-                                            class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
-                                            <i class="fa-solid fa-plus"></i>
-                                            <span class="p_custom px-2">
-                                                افزودن ویدئو نوازندگی
-                                            </span>
-                                        </button>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-2 col-xs-12"></div>
-                                <div class="col-md-4 mx-auto col-xs-12">
-                                    <div id="imageGroup"></div>
-                                    <div class="row mt-3">
-                                        <button type="button" data-bs-toggle="modal"
-                                            data-bs-target="#skillMediaOverview"
-                                            class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
-                                            <i class="fa-solid fa-plus"></i>
-                                            <span class="p_custom px-2">
-                                                افزودن تصویر
-                                            </span>
-                                        </button>
-                                    </div>
-                                    <input type="hidden" name="mediaIdss" id="mediasIdsId" value="[]">
-                                    <input type="hidden" name="mediaIdss" id="mediasIdsIdV2" value="[]">
-
-                                </div>
-                                <div class="col-md-1 col-xs-12"></div>
-
-                            </div>
-                            <div class="d-flex mt-5 form-group">
-                                <button type="button" onclick="setGeneralInformation($(this))"
-                                    class="btn btn-outline-secondary float-start  text-sm mx-auto px-3 w-75">
-                                    <span class="p_custom px-2">
-                                        ذخیره
+                            <div class="card-body mx-auto">
+                                <button type="button"
+                                    style="background-color: #E9E3E3 !important; color: black;  border-radius: 0.9rem; width: 3rem !important;"
+                                    class="btn btn-light-secondary float-start  text-sm mx-auto  ">
+                                    <span id="sentMessage" style="font-weight: bolder;"
+                                        class="p_custom iranYekanLight ">
+                                        1
                                     </span>
                                 </button>
                             </div>
-
-
-
-
-
                         </div>
-
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm bg-white border-0">
+                            <div class="card-title mx-auto px-auto ">
+                                <p class="px-auto text-center mt-5">
+                                    <svg width="46" height="46" viewBox="0 0 46 46" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M30.6667 43.6042H15.3333C4.3125 43.6042 4.3125 37.7583 4.3125 32.5833V30.6667C4.3125 26.3925 4.3125 21.5625 13.4167 21.5625C15.6975 21.5625 16.5408 22.1183 17.7292 23C17.7867 23.0575 17.8633 23.0958 17.9208 23.1725L19.8758 25.2425C21.5242 26.9867 24.5142 26.9867 26.1625 25.2425L28.1175 23.1725C28.175 23.115 28.2325 23.0575 28.3092 23C29.4975 22.0992 30.3408 21.5625 32.6217 21.5625C41.7258 21.5625 41.7258 26.3925 41.7258 30.6667V32.5833C41.6875 39.905 37.9883 43.6042 30.6667 43.6042ZM13.4167 24.4375C7.1875 24.4375 7.1875 26.3925 7.1875 30.6667V32.5833C7.1875 37.835 7.1875 40.7292 15.3333 40.7292H30.6667C36.3783 40.7292 38.8125 38.295 38.8125 32.5833V30.6667C38.8125 26.3925 38.8125 24.4375 32.5833 24.4375C31.2033 24.4375 30.9158 24.61 30.0917 25.2233L28.2325 27.1975C26.8525 28.6542 24.9933 29.4592 23 29.4592C21.0067 29.4592 19.1475 28.6542 17.7675 27.1975L15.9083 25.2233C15.0842 24.61 14.7967 24.4375 13.4167 24.4375Z"
+                                            fill="black" />
+                                        <path
+                                            d="M36.4163 24.4377C35.6305 24.4377 34.9788 23.786 34.9788 23.0002V11.5002C34.9788 7.226 34.9788 5.271 28.7497 5.271H17.2497C11.0205 5.271 11.0205 7.226 11.0205 11.5002V23.0002C11.0205 23.786 10.3688 24.4377 9.58301 24.4377C8.79717 24.4377 8.14551 23.786 8.14551 23.0002V11.5002C8.14551 7.226 8.14551 2.396 17.2497 2.396H28.7497C37.8538 2.396 37.8538 7.226 37.8538 11.5002V23.0002C37.8538 23.786 37.2022 24.4377 36.4163 24.4377Z"
+                                            fill="black" />
+                                        <path
+                                            d="M26.6032 19.1284H20.2207C19.4349 19.1284 18.7832 18.4768 18.7832 17.6909C18.7832 16.9051 19.4349 16.2534 20.2207 16.2534H26.6032C27.389 16.2534 28.0407 16.9051 28.0407 17.6909C28.0407 18.4768 27.4082 19.1284 26.6032 19.1284Z"
+                                            fill="black" />
+                                        <path
+                                            d="M28.2132 13.3784H18.6299C17.844 13.3784 17.1924 12.7268 17.1924 11.9409C17.1924 11.1551 17.844 10.5034 18.6299 10.5034H28.2132C28.9991 10.5034 29.6507 11.1551 29.6507 11.9409C29.6507 12.7268 29.0182 13.3784 28.2132 13.3784Z"
+                                            fill="black" />
+                                    </svg>
+                                </p>
+                                <h6 class="mt-3 iranYekanLightBold"> پیام های خوانده نشده</h6>
+                            </div>
+                            <div class="card-body mx-auto">
+                                <button type="button"
+                                    style="background-color: #E9E3E3 !important; color: black;  border-radius: 0.9rem; width: 3rem !important;"
+                                    class="btn btn-light-secondary float-start  text-sm mx-auto  ">
+                                    <span id="unreadedMessage" style="font-weight: bolder;"
+                                        class="p_custom iranYekanLight ">
+                                        1
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm bg-white border-0">
+                            <div class="card-title mx-auto px-auto ">
+                                <p class="px-auto text-center mt-5">
+                                    <svg width="46" height="46" viewBox="0 0 46 46" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M32.583 40.7293H13.4163C12.6305 40.7293 11.9788 40.0777 11.9788 39.2918C11.9788 38.506 12.6305 37.8543 13.4163 37.8543H32.583C38.0647 37.8543 40.7288 35.1902 40.7288 29.7085V16.2918C40.7288 10.8102 38.0647 8.146 32.583 8.146H13.4163C7.93467 8.146 5.27051 10.8102 5.27051 16.2918C5.27051 17.0777 4.61884 17.7293 3.83301 17.7293C3.04717 17.7293 2.39551 17.0777 2.39551 16.2918C2.39551 9.296 6.42051 5.271 13.4163 5.271H32.583C39.5788 5.271 43.6038 9.296 43.6038 16.2918V29.7085C43.6038 36.7043 39.5788 40.7293 32.583 40.7293Z"
+                                            fill="black" />
+                                        <path
+                                            d="M22.9997 24.6674C21.3897 24.6674 19.7605 24.1691 18.5147 23.1533L12.5155 18.3616C11.9022 17.8633 11.7872 16.9624 12.2855 16.3491C12.7838 15.7358 13.6846 15.6208 14.298 16.1191L20.2971 20.9108C21.7538 22.08 24.2263 22.08 25.683 20.9108L31.6822 16.1191C32.2955 15.6208 33.2155 15.7166 33.6946 16.3491C34.193 16.9624 34.0971 17.8824 33.4646 18.3616L27.4655 23.1533C26.2388 24.1691 24.6097 24.6674 22.9997 24.6674Z"
+                                            fill="black" />
+                                        <path
+                                            d="M15.333 33.0625H3.83301C3.04717 33.0625 2.39551 32.4108 2.39551 31.625C2.39551 30.8392 3.04717 30.1875 3.83301 30.1875H15.333C16.1188 30.1875 16.7705 30.8392 16.7705 31.625C16.7705 32.4108 16.1188 33.0625 15.333 33.0625Z"
+                                            fill="black" />
+                                        <path
+                                            d="M9.58301 25.396H3.83301C3.04717 25.396 2.39551 24.7443 2.39551 23.9585C2.39551 23.1727 3.04717 22.521 3.83301 22.521H9.58301C10.3688 22.521 11.0205 23.1727 11.0205 23.9585C11.0205 24.7443 10.3688 25.396 9.58301 25.396Z"
+                                            fill="black" />
+                                    </svg>
+                                </p>
+                                <h6 class="mt-3 iranYekanLightBold"> پیام های خوانده شده </h6>
+                            </div>
+                            <div class="card-body mx-auto">
+                                <button type="button"
+                                    style="background-color: #E9E3E3 !important; color: black;  border-radius: 0.9rem; width: 3rem !important;"
+                                    class="btn btn-light-secondary float-start  text-sm mx-auto  ">
+                                    <span id="readedMsg" style="font-weight: bolder;" class="p_custom iranYekanLight ">
+                                        0
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-
                 </div>
+
+
+
 
                 <div id="contactWithMe"
-                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
-                    <div class="producer-title mt-2">
-                        <h3
-                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
-                            ارتباط با گروه
-                        </h3>
-                    </div>
+                    class="row mt-4 p-4 pt-5 mx-auto  rounded-3xl shadow-2xl borders  sticky rounded-lg ">
+
                     <div class="col-md-12 mt-4">
-
-                        <div class="row">
-                            <div class="col-md-7 padding_x_0 col-xs-12">
-                                <div class="form-group w_75_costum d-flex">
-
-                                    <input style="direction: ltr;" type="text"
-                                        class="form-control iranYekanLight inputHeight" id="twitterLink"
-                                        placeholder="https://www.twitter.com/sabach">
-                                    <i class="fa-brands mobile_display_none fa-twitter fa-2x ms-3 mt-3"></i>
-                                </div>
-
-                            </div>
-                            <div class="col-md-5 mt-3_costom padding_x_0 mx-auto col-xs-12">
-                                <div class="form-group w_75_costum d-flex">
-                                    <input style="direction: ltr;" type="text"
-                                        class="form-control iranYekanLight inputHeight" id="facebookLink"
-                                        placeholder="https://www.facebook.com/sabach">
-                                    <i class="fa-brands mobile_display_none fa-facebook-f fa-xl ms-3 mt-4"></i>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="row mt-5_costom">
-                            <div class="col-md-7 padding_x_0 col-xs-12">
-                                <div class="form-group w_75_costum d-flex">
-                                    <input style="direction: ltr;" type="text"
-                                        class="form-control iranYekanLight inputHeight" id="instagramLinkOne"
-                                        placeholder="www.instagram.com/saba_choupani/">
-                                    <i class="fa-brands mobile_display_none fa-instagram fa-2x ms-3 mt-2"
-                                        style="color: #000000;"></i>
-                                </div>
-
-                            </div>
-                            <div class="col-md-5 mt-3_costom padding_x_0 mx-auto col-xs-12">
-                                <div class="form-group w_75_costum d-flex">
-                                    <input style="direction: ltr;" type="text"
-                                        class="form-control iranYekanLight inputHeight" id="instagramLinkTwo"
-                                        placeholder="www.instagram.com/saba_choupani/">
-                                    <i class="fa-brands mobile_display_none fa-instagram fa-2x ms-3 mt-2"
-                                        style="color: #000000;"></i>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-
-
-
-                        <div class="d-flex mt-5_costom form-group">
-                            <button type="button" onclick="updateSocial($(this))"
-                                class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-25-costum pt-2 ">
-                                <i class="fa-solid fa-plus mobile_display_none"></i>
-                                <span class="p_custom_2 px-2">
-                                    افزودن شبکه های اجتماعی
-                                </span>
-                            </button>
-                        </div>
-
-
-
-
-
-                    </div>
-
-                </div>
-
-                <div id="aboutMe"
-                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
-                    <div class="producer-title mt-2">
-                        <h3
-                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
-                            درباره گروه
-                        </h3>
-                    </div>
-                    <div class="col-md-12 mt-4">
-
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                                <div class="form-group w-100 d-flex">
-
-                                    <textarea placeholder=" ویژگی های شخصیتی و حرفه ی خود در این قسمت بنویسید.."
-                                        class="form-control iranYekanLight" id="aboutMesasas" rows="8"></textarea>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-10">
-
-                            </div>
-                            <div class="col-md-1 ps-0 form-group">
-                                <button type="button" "
-                                    class=" btn btn-outline-dark border-radius-1_2rem float-start text-sm mx-auto pt-2 ">
-                                    <span class=" p_custom px-2">
-                                    انصراف
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="col-md-1 form-group">
-                                <button type="button" onclick="updateAboutMe($(this))"
-                                    class="btn btn-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 ">
-                                    <span class="p_custom px-2">
-                                        ذخیره
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="spskill"
-                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
-                    <input type="hidden" id="skillId" />
-                    <div class="producer-title mt-2">
-                        <h3
-                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
-                            اطلاعات تخصصی گروه
-                        </h3>
-                    </div>
-                    <div class="col-md-12 mt-4">
-
-                        <div class="row">
-                            <div class="col-md-5 col-xs-12 margin-top-1rem">
-                                <div class="form-group w_75_costum instrumnetClass">
-                                    <label for="instrumentss" class="iranYekanLightBold">ساز تخصصی</label>
-                                    <div class="input-group">
-
-                                        <select
-                                            onchange="$('#mediasIdsIdV2').val('[]');$('#skillId').val('');$('#workExperienceYears').val('');$('#imageSkill').empty();$('#videoSkill').empty();buildTemplateQuestion(2003)"
-                                            class="form-select form-control  rounded-end-3 text-gray-400 inputHeight"
-                                            aria-label="Filter select" id="instrumentss">
-                                            <option>
-                                                انتخاب کنید
-                                            </option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                                <div class="form-group w_75_costum artStyleClass">
-                                    <label for="artStyle" class="iranYekanLightBold">سبک</label>
-                                    <div class="input-group">
-
-                                        <select
-                                            class="form-select form-control  rounded-end-3 text-gray-400 inputHeight"
-                                            aria-label="Filter select" id="artStyle">
-                                            <option value=null>
-                                                انتخاب کنید
-                                            </option>
-                                            <option>
-                                                پاپ
-                                            </option>
-                                            <option>
-                                                جز
-                                            </option>
-                                            <option>
-                                                کانتری
-                                            </option>
-                                            <option>
-                                                رپ
-                                            </option>
-                                            <option>
-                                                راک
-                                            </option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-md-5 mx-auto col-xs-12">
-                                <div class="form-group w_75_costum">
-                                    <label class="iranYekanLightBold " for="workExperienceYears">مدت زمان </label>
-                                    <input type="text" class="form-control iranYekanLight inputHeight"
-                                        id="workExperienceYears" placeholder="3">
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="row mt-5_costom">
-
-
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-md-1 col-xs-12"></div>
-                            <div class="col-md-4 col-xs-12">
-                                <div id="videoSkill">
-                                    <!-- <div id="id1">
-                                        <i class="fa-solid fa-trash-can me-4 ms-2 mt-1  fa-1x float-end hover-shadow"
-                                            style="color: rgb(255, 255, 255);  position: absolute;  z-index: 10000;"
-                                            data-bs-toggle="modal" onclick="confirmToRemove('id1','','')"></i>
-                                        <div class="row">
-                                            <div class="ratio ratio-16x9"><iframe style="border-radius: 0.9rem;"
-                                                    src="/media/176591c5-c0a0-4748-86b9-698561aa016b" title=""
-                                                    allowfullscreen=""></iframe></div>
-                                        </div>
-                                    </div> -->
-
-                                </div>
-
-                                <div class="row mt-3">
-                                    <button type="button" data-bs-toggle="modal"
-                                        data-bs-target="#skillMediaToGroupOverview"
-                                        class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
-                                        <i class="fa-solid fa-plus"></i>
-                                        <span class="p_custom px-2">
-                                            افزودن ویدئو نوازندگی
-                                        </span>
-                                    </button>
-                                </div>
-
-                            </div>
-                            <div class="col-md-2 col-xs-12"></div>
-                            <div class="col-md-4 mx-auto col-xs-12">
-                                <div id="imageSkill">
-                                    <!-- <div id="imageSkill2">
-                                        <i class="fa-solid fa-trash-can mt-1 me-4  ms-2 fa-1x float-end hover-shadow"
-                                            style="color: rgb(255, 255, 255);  position: absolute;  z-index: 10000;"
-                                            data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-                                        <img src="/media/e85dfcde-7efb-445c-8629-9caa8ed03d6d"
-                                            style="border-radius: 0.9rem;height:11.4rem; width:100%;" title=""
-                                            allowfullscreen="">
-                                    </div> -->
-
-                                </div>
-                                <div class="row mt-3">
-                                    <button type="button" data-bs-toggle="modal"
-                                        data-bs-target="#skillMediaToGroupOverview"
-                                        class="btn btn-outline-dark border-radius-1_2rem lineHeiht_2_1 float-start  text-sm mx-auto px-3 w-75_costum pt-2 ">
-                                        <i class="fa-solid fa-plus"></i>
-                                        <span class="p_custom px-2">
-                                            افزودن تصویر
-                                        </span>
-                                    </button>
-                                </div>
-                                <input type="hidden" name="mediaIdss" id="mediasIdsId" value=null />
-
-                            </div>
-                            <div class="col-md-1 col-xs-12"></div>
-
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-md-8"></div>
-                            <div class="col-md-2">
-                                <div class="d-flex form-group">
-                                    <button type="button" onclick="saveSkill(false)"
-                                        class="btn btn-outline-dark float-start  text-sm mx-auto px-3 w-75">
-                                        <span class="p_custom">
-                                            ذخیره
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="d-flex form-group">
-                                    <button type="button" onclick="saveSkill(true)"
-                                        class="btn btn-outline-dark float-start  text-sm mx-auto px-3 w-75 marginTop1rem">
-                                        <span class="p_custom">
-                                            افزودن
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div id="compaleteIfno"
-                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
-                    <div class="producer-title mt-2">
-                        <h3
-                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
-                            لیست تخصص ها
-                        </h3>
-                    </div>
-                    <div>
-                        <div class="row mt-3">
-                            <table class="table table-hover iranYekanLight mobile_font_size">
-                                <thead>
+                        <div class="bdr">
+                            <table class="table mb-0 table-bordered iranYekanLight ">
+                                <thead class="bg-gray tableHeader">
                                     <tr>
-                                        <th scope="col">حوزه تخصصی</th>
-                                        <th scope="col">سبک</th>
-                                        <th scope="col">ساز تخصصی</th>
-                                        <th scope="col">مدت زمان</th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
+                                        <th scope="col" class="text-center">#</th>
+                                        <th scope="col" class="text-center">نام</th>
+                                        <th scope="col" class="text-center">عملیات</th>
                                     </tr>
                                 </thead>
-                                <tbody id="listSkillstBody">
-                                    <tr>
-                                        <td>نوازنده</td>
-                                        <td>گیتار</td>
-                                        <td>10</td>
-                                        <td class="d-flex">
-                                            <a class="nav-link" href="#">ویرایش</a>
+                                <tbody class="bg-gray" id="messageContent">
+                                    <!-- <tr class="td_content">
+                                        <td class="td_content text-center">
+                                            عباس معروفی
                                         </td>
-                                        <td>
-                                            <a class="nav-link" href="#">حذف</a>
-                                        </td>
+                                        <td class="td_content text-center">مشاهده</td>
                                     </tr>
-                                    <tr>
-                                        <td>نوازنده</td>
-                                        <td>گیتار</td>
-                                        <td>10</td>
-                                        <td class="d-flex">
-                                            <a class="nav-link" href="#">ویرایش</a>
+                                    <tr class="td_content">
+                                        <td class="td_content text-center">
+                                            عباس معروفی
                                         </td>
-                                        <td>
-                                            <a class="nav-link" href="#">حذف</a>
-                                        </td>
-                                    </tr>
+                                        <td class="td_content text-center">مشاهده</td>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
                 </div>
 
-                <div id="compaleteIfno"
-                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
-                    <div class="producer-title mt-2">
-                        <h3
-                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
-                            اطلاعات تکمیلی من
-                        </h3>
-                    </div>
-                    <div id="questionsDiv">
-
-
-                    </div>
-                </div>
-                <div id="sampleWork"
-                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
-                    <div class="producer-title mt-2">
-                        <h3
-                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
-                            نمونه کارها
-                        </h3>
-                    </div>
-                    <div class="col-md-12 mt-4">
-                        <div id="carouselExampleIndicators2" class="carousel slide">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
+                <!-- Modal invatec code -->
+                <div class="modal fade" id="ConfirmPopUp" tabindex="-1" aria-labelledby="ConfirmPopUpModal"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="ConfirmPopUpModal">
+                                    تاییدیه
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row" id="workSamplesDiv">
 
-                                    </div>
-                                </div>
-
-
-
+                            <div class="modal-body">
                             </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-                <div
-                    class="row mt-4 p-5 mx-auto max-w-6xl p-8 rounded-3xl shadow-2xl borders mt-2 sticky rounded-lg p-1 bg-white rounded-3xl">
-                    <div class="producer-title mt-2">
-                        <h3
-                            class="iranYekanLightBold ant-typography ant-typography-rtl css-dev-only-do-not-override-1a9vt8h">
-                            توضیحات دلخواه
-                        </h3>
-                    </div>
-                    <div class="col-md-12 mt-4">
-
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                                <div class="form-group w-100 d-flex">
-
-                                    <textarea id="extraDescription"
-                                        placeholder="  اگر توضیحات خاصی مدنظرتون هست در این قسمت بنویسید.."
-                                        class="form-control iranYekanLight" id="extraInformation" rows="8"></textarea>
-
-                                </div>
-
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
+                                <button type="button" id="ConfirmPopUpBtn" onclick=""
+                                    class="btn btn-primary">تایید</button>
                             </div>
-                        </div>
-                        <div class="row mt-5_costom">
-                            <div class="col-md-2">
 
-                            </div>
-                            <div class="col-md-5 ps-5_costom  form-group">
-
-                            </div>
-                            <div class="col-md-2 ps-0-costum mr_right form-group">
-
-                            </div>
-                            <div class="col-md-3 ps-0-costum mr_right2 form-group">
-                                <button type="button" onclick="updateExtraDescription($(this))"
-                                    class="btn btn-dark border-radius-1_2rem float-start  text-sm mx-auto pt-2 ">
-                                    <span class="p_custom px-2">
-                                        ذخیره توضیحات اضافه
-                                    </span>
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1486,7 +994,7 @@
                             <div class="d-flex">
                                 <img src="assets/icons/Bia2band1.svg" alt="guaranty-u-img" class="rounded-full"
                                     width="50" height="50" loading="lazy">
-                                <strong class="text-xl mt-2">بیا توبند</strong>
+                                <strong class="text-xl ms-2 mt-3">بیا توبند</strong>
                             </div>
                         </div>
                         <p class="text-xs text-slate-500 mt-4 px-5">
