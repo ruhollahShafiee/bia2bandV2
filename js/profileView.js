@@ -1,7 +1,7 @@
 function getCategories(id, sucCallback, errCallback) {
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -302,6 +302,7 @@ $(document).ready(function () {
 
 
 	if (window.location.href.split("#").length == 2) {
+		
 		if (window.location.href.split("#")[1].split("artistId=").length == 2) {
 			$("#artistId").val(window.location.href.split("#")[1].split("artistId=")[1])
 			getProfileInformation()

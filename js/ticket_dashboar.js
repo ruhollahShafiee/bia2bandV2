@@ -15,7 +15,7 @@ function countTicket(statusParam, targetElement) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -55,7 +55,7 @@ function addTicket(tagObj) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -90,7 +90,7 @@ function getAllTicket() {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -165,7 +165,7 @@ function getTicket(ticketId) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -224,7 +224,7 @@ function updateTicket(tagObj) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({

@@ -17,7 +17,7 @@ function countMessage(statusParam, targetElement) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -50,7 +50,7 @@ function sendMessageBox(){
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -99,7 +99,7 @@ function createMessage(tagObj) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -134,7 +134,7 @@ function getListOofMessage(fromArtistId, toArtistId) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -203,7 +203,7 @@ function getAllMessage() {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({

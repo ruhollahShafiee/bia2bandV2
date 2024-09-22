@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="samandehi" content="637293859"/>
-    <meta name="enamad" content="61863701" /> 
+    <meta name="samandehi" content="637293859" />
+    <meta name="enamad" content="61863701" />
     <link href="css/style.css" rel="stylesheet">
     <link href="css/nav.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/assets/icon/Bia2band1.svg" />
@@ -45,41 +45,34 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light  navbar-custom nav">
-        <div class="container-fluid">
+    <div class="bg-white">
+        <div class="container mx-auto">
+            <nav class="navbar navbar-expand-lg navbar-light  navbar-custom nav">
+                <div class="container-fluid">
 
-            <a class="navbar-brand" href="#First">
-                <img class="pl-10" src="assets/icons/Bia2band1.svg" alt="bia2band">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img class="pl-10" src="assets/images/samandehi.png" alt="bia2band" height="40px">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <!-- Search icon could be added here using an input group or similar component -->
-                <div class='d-flex justify-content-end float-end nav-item'>
-                    <span role="img" aria-label="user" class="anticon anticon-user mx-2 text-lg"><svg
-                            viewBox="64 64 896 896" focusable="false" data-icon="user" width="1em" height="1em"
-                            fill="currentColor" aria-hidden="true">
-                            <path
-                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
-                            </path>
-                        </svg></span>
-                    <a class='nav-link mt-1' style="padding: 0;" href='login.html'>ورود</a>
                 </div>
-            </div>
+
+
+
+            </nav>
         </div>
+    </div>
 
 
-
-    </nav>
     <div class="container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8" id="root">
 
         <div class="row mt-4">
-            <div class="col-md-4 mx-auto justify-content-center">
+            <div class="col-md-6 mx-auto justify-content-center">
                 <div class="flex mb-5  d-flex justify-content-center">
                     <img src="assets/icons/Bia2band1.svg" alt="guaranty-u-img" class="rounded-full" height="50"
                         loading="lazy">
@@ -87,53 +80,107 @@
                 </div>
                 <p class="text-2xl  d-flex justify-content-center">ثبت نام </p>
                 <p class="-mt-3 text-slate-400  d-flex justify-content-center">لطفا موارد زیر را پر نمایید</p>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="firstName" id="firstName" aria-describedby="emailHelp"
-                        placeholder="نام">
-                </div>
-                <div class="form-group mt-5" style="display: none;">
-                    <input type="text" class="form-control" name="lastName" id="lastName" aria-describedby="emailHelp"
-                        placeholder="نام خانوادگی">
-                </div>
-                <div class="form-group mt-5">
-                    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp"
-                        placeholder="نام کاربری">
-                </div>
-                <div class="form-group mt-5">
-                    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp"
-                        placeholder="ایمیل">
-                </div>
-                <div class="form-group mt-5">
-                    
-                    <input type="password" name="password1" class="form-control" id="password1" placeholder="رمز عبور">
-                    <div id="emailHelp" style="font-size: 10px;" class="form-text">
-                        رمز عبور باید حداقل ۸ کاراکتر داشته باشد و شامل حداقل یک حرف بزرگ، یک حرف کوچک، یک عدد و یک کاراکتر ویژه (!@#$%^&*) باشد.
+                <div class="form-group row">
+                    <label for="firstName" class="col-3 registerFields col-form-label iranYekanLightBold">
+                        نام و نام خانوادگی
+                        <span style="color: red;">*</span>
+                    </label>
+                    <div class="col-8">
+                        <input type="text" class="form-control placeholder-input d-flex justify-content-end"
+                            name="firstName" id="firstName" aria-describedby="emailHelp"
+                            placeholder="نام و نام خانوادگی">
                     </div>
-                    
+
                 </div>
-                <div class="form-group mt-5">
-                    <input type="password" name="password2" class="form-control" id="password2"
-                        placeholder="تکرار رمز عبور">
-                        <div id="emailHelp" style="font-size: 10px;" class="form-text">
-                            رمز عبور باید حداقل ۸ کاراکتر داشته باشد و شامل حداقل یک حرف بزرگ، یک حرف کوچک، یک عدد و یک کاراکتر ویژه (!@#$%^&*) باشد.
-                        </div>
+                <div class="form-group row mt-5">
+                    <label for="phoneNumber"
+                        class="col-3 registerFields col-form-label iranYekanLightBold d-flex justify-content-end">
+                        موبایل
+                        <span style="color: red;">*</span>
+                    </label>
+                    <div class="col-8">
+                        <input type="text" name="phoneNumber" class="form-control placeholder-input" id="phoneNumber"
+                            placeholder="شماره موبایل">
+                    </div>
+
                 </div>
-                <div class="form-group mt-5">
-                    <input type="text" name="phoneNumber" class="form-control" id="phoneNumber"
-                        placeholder="شماره موبایل">
+                <!-- <div style="font-size: 11px;" class="form-text d-flex justify-content-center">
+                    از شماره ی موبایل برای نام کاربری استفاده میشود
+                </div> -->
+                <div class="form-group row mt-5">
+                    <label for="email" class="col-3 registerFields col-form-label iranYekanLightBold d-flex justify-content-end">
+                        ایمیل
+                        <span style="color: red;">*</span>
+                    </label>
+                    <div class="col-8">
+                        <input type="text" class="form-control placeholder-input" id="email" name="email"
+                            aria-describedby="emailHelp" placeholder="ایمیل">
+                    </div>
                 </div>
-                <div class="form-group mt-5">
-                    <input type="text" name="inviatedCode" class="form-control" id="inviatedCode" placeholder="کد دعوت">
+                <div class="form-group row mt-5">
+                    <label for="email" class="col-3 registerFields col-form-label iranYekanLightBold d-flex justify-content-end">
+                        رمز عبور
+                        <span style="color: red;">*</span>
+                    </label>
+                    <div class="col-8">
+                        <input type="password" name="password1" class="form-control placeholder-input" id="password1"
+                            placeholder="رمز عبور باید حداقل ۸ کاراکتر داشته باشد و شامل حداقل یک حرف و عدد باشد">
+                    </div>
+
+
+                </div>
+                <div class="form-group row mt-5">
+                    <label for="password2"
+                        class="col-3 registerFields col-form-label iranYekanLightBold d-flex justify-content-end">
+                        تکرار رمز عبور
+                        <span style="color: red;">*</span>
+                    </label>
+                    <div class="col-8">
+                        <input type="password" name="password2" class="form-control placeholder-input" id="password2"
+                            placeholder="رمز عبور باید حداقل ۸ کاراکتر داشته باشد و شامل حداقل یک حرف و عدد باشد">
+                    </div>
+
+                </div>
+                <div class="form-group row mt-5">
+                    <label for="inviatedCode"
+                        class="col-3 registerFields col-form-label  iranYekanLightBold d-flex justify-content-end">
+                        کد دعوت
+                        <span style="color: red;">*</span>
+                    </label>
+
+                    <div class="col-8">
+                        <input type="text" name="inviatedCode" class="form-control placeholder-input" id="inviatedCode"
+                            placeholder="کد دعوت">
+                    </div>
+
+                </div>
+                <div class="row mt-4 d-flex justify-content-center">
+                    <div class="col-8 form-check iranYekanLight " style="  padding-left: 0px;  font-size: 13px;">
+                        <input class="form-check-input"
+                            onchange="saveUsernamePass($('#username').val(),$('#fpass').val())" type="checkbox" value=""
+                            id="saveUserCheckBox">
+                        <label class="form-check-label" for="saveUserCheckBox">
+                            <span>
+                                با ثبت نام در بیاتوبند
+                            </span>
+                            <a class="loingMsgPnl" onclick="$('#rulePopup').modal('toggle')" href="javascript:void(0);">
+                                شرایط و قوانین
+                            </a>
+                            <span>
+                                این سامانه را میپذیرم
+                            </span>
+                        </label>
+                    </div>
                 </div>
 
-                <div class="pt-5 w-50 mx-auto h-full">
+                <div class=" w-50 mx-auto h-full d-flex justify-content-center">
                     <button type="button"
-                        onclick="register($('#firstName').val(), $('#lastName').val(), $('#email').val(), $('#username').val(), $('#password1').val(), $('#inviatedCode').val(), $('#phoneNumber').val(),$(this))"
+                        onclick="register($('#firstName').val(), $('#lastName').val(), $('#email').val(), $('#password1').val(), $('#inviatedCode').val(), $('#phoneNumber').val(),$(this))"
                         class="btn w-100 btn-outline-secondary mt-5  text-sm border-dotted2 onclick-shadow">
                         <span class="p_custom">
                             ثبت نام
                         </span>
-                        
+
 
                     </button>
 
@@ -142,68 +189,72 @@
             </div>
         </div>
 
+        <div class="modal fade " id="rulePopup" tabindex="-1" aria-labelledby="rulePopupModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-end" style=" border-bottom: 0px;">
+                        <span data-bs-dismiss="modal" class="" aria-label="Close">
+                            <svg width="32" height="32" viewBox="0 0 46 46" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.9997 43.6043C11.6338 43.6043 2.39551 34.366 2.39551 23.0002C2.39551 11.6343 11.6338 2.396 22.9997 2.396C34.3655 2.396 43.6038 11.6343 43.6038 23.0002C43.6038 34.366 34.3655 43.6043 22.9997 43.6043ZM22.9997 5.271C13.2247 5.271 5.27051 13.2252 5.27051 23.0002C5.27051 32.7752 13.2247 40.7293 22.9997 40.7293C32.7747 40.7293 40.7288 32.7752 40.7288 23.0002C40.7288 13.2252 32.7747 5.271 22.9997 5.271Z"
+                                    fill="black" fill-opacity="0.7" />
+                                <path
+                                    d="M17.5763 29.8616C17.2121 29.8616 16.8479 29.7274 16.5604 29.4399C16.0046 28.8841 16.0046 27.9641 16.5604 27.4083L27.4088 16.5599C27.9646 16.0041 28.8846 16.0041 29.4404 16.5599C29.9963 17.1158 29.9963 18.0358 29.4404 18.5916L18.5921 29.4399C18.3238 29.7274 17.9404 29.8616 17.5763 29.8616Z"
+                                    fill="black" fill-opacity="0.7" />
+                                <path
+                                    d="M28.4246 29.8616C28.0604 29.8616 27.6963 29.7274 27.4088 29.4399L16.5604 18.5916C16.0046 18.0358 16.0046 17.1158 16.5604 16.5599C17.1163 16.0041 18.0363 16.0041 18.5921 16.5599L29.4404 27.4083C29.9963 27.9641 29.9963 28.8841 29.4404 29.4399C29.1529 29.7274 28.7888 29.8616 28.4246 29.8616Z"
+                                    fill="black" fill-opacity="0.7" />
+                            </svg>
+                        </span>
 
 
 
+                    </div>
 
-        <footer class="footer p-5 mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5">
+                    <div class="modal-body" style="margin-top: -2rem;">
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="d-flex">
-                                    <img src="assets/icons/Bia2band1.svg" alt="guaranty-u-img" class="rounded-full"
-                                        width="50" height="50" loading="lazy">
+                            <div class="col-md-8 mx-auto justify-content-center">
+                                <div class="flex mb-4  d-flex justify-content-center">
+                                    <img src="assets/images/samandehi.png" alt="guaranty-u-img" class="rounded-full"
+                                        height="50" loading="lazy">
                                     <strong class="text-xl mt-2 ms-2">بیا توبند</strong>
                                 </div>
+                                <p class="text-2xl mb-3  d-flex justify-content-center">
+                                    شرایط و قوانین
+                                </p>
+
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <span class="text-primary">•</span>
+                                        تابعیت جمهوری اسلامی ایران را داشته باشد 
+                                    </li>
+                                    <li>
+                                        <span class="text-primary">•</span> 
+                                        مقید به قوانین کشور باشد
+                                    </li>
+                                    <li>
+                                        <span class="text-primary">•</span> 
+                                        مقید به قوانین پلتفرم باشد
+                                    </li>
+                                    
+                                </ul>
+
                             </div>
-                            <p class="text-xs text-slate-500 mt-4 px-5">
-                                توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر
-                                از
-                                بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند ...
-                            </p>
                         </div>
-                        <div class="row mt-4">
-                            <div class="col-md-12 ">
-                                <i class="fa fa-location-dot text-gray-400">
-
-                                </i>
-                                <b class="text-xs text-slate-500 m-2">تهران , خیابان ولی عصر , پاسداران جنوبی , خیابان
-                                    مظفر , ساختمان شماره 17</b>
-                            </div>
-                            <div class="col-md-12 ">
-                                <i class="fa-solid fa-phone-flip text-gray-400"></i>
-                                <b class="text-xs text-slate-500 m-2">09125858595</b>
-                            </div>
-                        </div>
-
 
                     </div>
-                    <div class="col-md-2">
-                        <h5 class="text-xl mt-2">خدمات ما</h5>
-                        <ul class="list-disc text-slate-500">
-                            <li>راهنمای مشتریان</li>
-                            <li>ورود و ثبت نام</li>
-                            <li>بلاگ</li>
-                            <li>فروشگاه</li>
-                        </ul>
+                    <div class="modal-footer" style="  border-top: 0px;  display: block !important;">
+
                     </div>
-                    <div class="col-md-1 mt-2">
-                        <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=523033&Code=HdOoeBhDJ84d5KJTkEPdv5Diaq1LGqdj'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=523033&Code=HdOoeBhDJ84d5KJTkEPdv5Diaq1LGqdj' alt='' style='cursor:pointer' code='HdOoeBhDJ84d5KJTkEPdv5Diaq1LGqdj'></a>
-                    </div>
-                    <div class="col-md-1 ms-5 mt-2">
-                        <img referrerpolicy='origin' id = 'rgvjjzpejxlzsizpesgtoeuk' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=371908&p=xlaojyoerfthpfvlobpdmcsi", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=371908&p=qftiyndtnbpdbsiylymaaqgw' />
-                    </div>
-                </div>
-                <hr>
-                <div class="row rounded  border-style-footer d-flex justify-content-center align-self-end">
-                    <div class="col-md-12 d-flex pt-3 justify-content-center align-self-end">
-                        <p>تمام حقوق این سایت متعلق به بیا تو بند می باشد</p>
-                    </div>
+
                 </div>
             </div>
-        </footer>
+        </div>
+
+
+
+        <div id="footerHtml"></div>
     </div>
 
 </body>

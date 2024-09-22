@@ -35,7 +35,7 @@ function addUserTogroup(username) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 
@@ -77,7 +77,7 @@ function removeMemberFromGroup(groupId, memberId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -135,7 +135,7 @@ function getGroupInformation() {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -233,7 +233,7 @@ function setGeneralInformation(targetObj) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -266,7 +266,7 @@ function addMember(memberId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -308,7 +308,7 @@ function updateBackgroundForm(thisObj, backgroundMediaForm) {
 function updateBackground(mediaId) {
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	let groupId = $("#groupId").val();
@@ -360,7 +360,7 @@ function updateProfile(mediaId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	let groupId = $("#groupId").val();
@@ -431,7 +431,7 @@ function addMedia2Group(groupId, mediaId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -538,7 +538,7 @@ function deleteMediaFromGroup(groupId, mediaId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 	let data = {
 		"aboutMe": $("#aboutMesasas").val()
@@ -619,7 +619,7 @@ function addMedia2Skill(skillId, mediaId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -724,7 +724,7 @@ function saveSkill(isNew) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -784,7 +784,7 @@ function loadSkill(skillId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$('#mediasIdsIdV2').val('[]');
@@ -825,7 +825,7 @@ function buildTemplateQuestion(categorId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -942,7 +942,7 @@ function removeSkill(thisObject, skillId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -997,7 +997,7 @@ function deleteMediaFromSkill(skillId, mediaId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 	let data = {
 		"aboutMe": $("#aboutMesasas").val()
@@ -1067,7 +1067,7 @@ function saveOrUpdateAnswer(questionId, anserId, isNew) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	let urlvar = "backend/api/answer/update/answer"
@@ -1444,7 +1444,7 @@ function addMedia2Answer(targetDiv, answerId, mediaId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -1478,7 +1478,7 @@ function addMedia2Answer(targetDiv, answerId, mediaId) {
 function deleteMediaFromAnswer(answer, mediaId) {
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -1562,7 +1562,7 @@ function changeSelectedValue(thisObj) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	let url = "";
@@ -1593,7 +1593,7 @@ function changeSelectedValue(thisObj) {
 function updateExtraDescription(tagObj) {
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 	let data = {
 		"groupId": $("#groupId").val(),
@@ -1624,11 +1624,11 @@ function getProfileInformation() {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
-		url: "backend/api/artist/getInfo",
+		url: "backend/api/artist/getInfo/0",
 		method: "GET",
 		headers: {
 			Authorization: "Bearer " + access_token
@@ -1639,6 +1639,8 @@ function getProfileInformation() {
 			settupBackgroundProfilePerson((response.background != null ? response.background.mediaUrl : null), (response.profile != null ? response.profile.mediaUrl : null))
 			$("#userId").val(response.id)
 			$("#userComplateName").val(response.firstname)
+			$("#fullNamePV").empty()
+			$("#fullNamePV").append(response.firstname)
 			let skillName = ''
 			mainSkillVideos = []
 			if (response.skills != null) {
@@ -1676,4 +1678,35 @@ function settupBackgroundProfilePerson(backgroundUrl, profileUrl) {
 	if (profileUrl != null && profileUrl != undefined) {
 		$('#personalProfileImageId').attr('src', profileUrl);
 	}
+}
+
+
+function updateAboutGroup(tagObj) {
+
+
+	let access_token = getCookie("access_token");
+	if (access_token == undefined || access_token == "" || access_token == null) {
+		location.href = 'index.html';
+	}
+	let data = {
+		"aboutGroup": $("#aboutMesasas").val(),
+		"groupId": $("#groupId").val()
+	}
+	$(tagObj).append('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>')
+
+	$.ajax({
+		url: "backend/api/groupv2/updateAboutGroup",
+		method: "PUT",
+		headers: {
+			Authorization: "Bearer " + access_token
+		},
+		data: JSON.stringify(data),
+		contentType: "application/json", // Set the content type
+		success: function (response) {
+			$(tagObj).find('span')[$(tagObj).find('span').length - 1].remove()
+		},
+		error: function (xhr, status, error) {
+			$(tagObj).find('span')[$(tagObj).find('span').length - 1].remove()
+		}
+	});
 }

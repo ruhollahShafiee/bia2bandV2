@@ -1,37 +1,7 @@
-function login(username_var, password_var,tagObj) {
-    let data = {
-        "username": username_var,
-        "password": password_var
-    };
-    $(tagObj).append('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>')
-    $.ajax({
-        url: "backend/api/auth/authenticate/v2",
-        method: "POST",
-        data: JSON.stringify({
-            username: username_var,
-            password: password_var
-        }),
-        contentType: "application/json", // Set the content type
-        success: function (response) {
-            setCookie("access_token", response["access_token"], 7)
-            setCookie("is_admin", response["is_admin"], 7)
-            access_token = response["access_token"]
-            $(tagObj).find('span')[$(tagObj).find('span').length -1 ].remove() 
-            location.href = 'index.html';
-        },
-        error: function (xhr, status, error) {
-            alert("login faild!")
-            $(tagObj).find('span')[$(tagObj).find('span').length -1 ].remove() 
-            location.href = 'login.html';
-            console.error("Error fetching data:", error);
-        }
-    });
 
 
-}
 
-
-function register(firstname, lastname, email, username, password, invitedCode, phoneNumber, tagObj) {
+function register(firstname, lastname, email, password, invitedCode, phoneNumber, tagObj) {
 
     if($("#password2").val() != $("#password1").val()){
         alert("رمز عبور یکسان نیست ")
@@ -47,7 +17,7 @@ function register(firstname, lastname, email, username, password, invitedCode, p
         "firstname": firstname,
         "lastname": lastname,
         "email": email,
-        "username": username,
+        "username": phoneNumber,
         "password": password,
         "invitedCode": invitedCode,
         "phoneNumber": phoneNumber

@@ -50,101 +50,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light  navbar-custom nav">
-        <div class="container-fluid">
+    <div class="bg-white">
+        <div class="container mx-auto" id="naveBar">
 
-            <a class="navbar-brand" href="#First">
-                <img class="pl-10" src="assets/icons/Bia2band1.svg" alt="bia2band">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto md-12" style="  width: 72%;"> <!-- Aligns links to the right -->
-                    <li class="nav-item">
-                        <a class="nav-link " href="index.html">صفحه نخست</a>
-                    </li>
-                    <li class='nav-item dropdown '>
-                        <a class="nav-link dropdown-toggle active" href="pishkhan.html"
-                            id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            داشبورد
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li class='dropdown-item'><a href="profile_personal.html#MyPersonalInfo" onclick=""
-                                    class="aMenu">مشخصات شخصی
-                                    من</a></li>
-                            <li class='dropdown-item'> <a href="profile_personal.html#contactWithMe"
-                                    class="aMenu">ارتباط با من</a></li>
-                            <li class='dropdown-item'> <a href="profile_personal.html#aboutMe" class="aMenu">درباره
-                                    من</a></li>
-                            <li class='dropdown-item'> <a href="profile_personal.html#spskill" class="aMenu">اطلاعات
-                                    تخصصی من</a></li>
-                            <li class='dropdown-item'> <a href="profile_personal.html#compaleteIfno"
-                                    class="aMenu">اطلاعات تکمیلی من</a>
-                            </li>
-                            <li class='dropdown-item'> <a href="profile_personal.html#sampleWork" class="aMenu">نمونه
-                                    کارها</a></li>
-                            <li class='dropdown-item'> <a href="profile_view.html" class="aMenu">نمای کلی
-                                    پروفایل</a></li>
-                            <li class='dropdown-item'><a href="profile.html" class="aMenu">کسب و کار من</a></li>
-                        </ul>
-                    </li>
-                    <li class='nav-item justShowOnMobile'>
-                        <a class='nav-link' href='profile.html'>مدیریت کسب و کار</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='#'>هم بندی ها</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='business.html'>کسب و کارها</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='search.html'>جستجوی پیشرفته</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='#'>بلاگ</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='aboutMe.html'>درباره ما</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='#'>تماس با ما</a>
-                    </li>
-
-                </ul>
-                <!-- Search icon could be added here using an input group or similar component -->
-                <div class='d-flex mx-auto nav-item'>
-                    <span role="img" aria-label="user" class="anticon anticon-user mx-2 text-lg"><svg
-                            viewBox="64 64 896 896" focusable="false" data-icon="user" width="1em" height="1em"
-                            fill="currentColor" aria-hidden="true">
-                            <path
-                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
-                            </path>
-                        </svg></span>
-                    <a class='nav-link' id="usernameInfo" style="padding: 0;" href='#'><a class='nav-link'
-                            id="usernameInfo" style="padding: 0;" href='login.html'>ورود/ثبت نام</a></a>
-                    <span role="img" aria-label="user" class="anticon anticon-user ms-2 text-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path
-                                d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" />
-                        </svg>
-
-
-                    </span>
-                    <a class='nav-link ms-1' onclick="logout()" style="padding: 0;" href='#'>خروج</a>
-                </div>
-
-            </div>
         </div>
-
-
-
-    </nav>
+    </div>
     <div class="container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8" id="root">
 
 
@@ -338,10 +248,10 @@
                                         </span>
 
 
-                                        <span class="ms-2">
+                                        <a href="#" onclick="location.href = 'admin_dashboard.html';"
+                                            style="color: black;text-decoration: none;" class="ms-2">
                                             تراکنش های مالی
-
-                                        </span>
+                                        </a>
                                     </div>
                                     <span class="float-end me-2">
                                         <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
@@ -914,76 +824,7 @@
             </div>
         </div>
     </div>
-    <footer class="footer p-5 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="d-flex">
-                                <img src="assets/icons/Bia2band1.svg" alt="guaranty-u-img" class="rounded-full"
-                                    width="50" height="50" loading="lazy">
-                                <strong class="text-xl ms-2 mt-3">بیا توبند</strong>
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-500 mt-4 px-5">
-                            توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر
-                            از
-                            بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند ...
-                        </p>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-md-12 ">
-                            <i class="fa fa-location-dot text-gray-400">
-
-                            </i>
-                            <b class="text-xs text-slate-500 m-2">تهران , خیابان ولی عصر , پاسداران جنوبی , خیابان
-                                مظفر , ساختمان شماره 17</b>
-                        </div>
-                        <div class="col-md-12 ">
-                            <i class="fa-solid fa-phone-flip text-gray-400"></i>
-                            <b class="text-xs text-slate-500 m-2">09125858595</b>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div class="col-md-2">
-                    <h5 class="text-xl mt-2">دسترسی سریع </h5>
-                    <ul class="list-disc text-slate-500">
-                        <li>صفحه اصلی</li>
-                        <li>راهنمای مشتریان</li>
-                        <li>ورود و ثبت نام</li>
-                        <li>بلاگ</li>
-                        <li>فروشگاه</li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h5 class="text-xl mt-2">خدمات ما</h5>
-                    <ul class="list-disc text-slate-500">
-                        <li>صفحه اصلی</li>
-                        <li>راهنمای مشتریان</li>
-                        <li>ورود و ثبت نام</li>
-                        <li>بلاگ</li>
-                        <li>فروشگاه</li>
-                    </ul>
-                </div>
-                <div class="col-md-1 mt-2">
-                    <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=523033&Code=HdOoeBhDJ84d5KJTkEPdv5Diaq1LGqdj'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=523033&Code=HdOoeBhDJ84d5KJTkEPdv5Diaq1LGqdj' alt='' style='cursor:pointer' code='HdOoeBhDJ84d5KJTkEPdv5Diaq1LGqdj'></a>
-                </div>
-                <div class="col-md-1 ms-5 mt-2">
-                    <img referrerpolicy='origin' id = 'rgvjjzpejxlzsizpesgtoeuk' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=371908&p=xlaojyoerfthpfvlobpdmcsi", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=371908&p=qftiyndtnbpdbsiylymaaqgw' />
-                </div>
-            </div>
-            <hr>
-            <div class="row rounded  border-style-footer d-flex justify-content-center align-self-end">
-                <div class="col-md-12 d-flex pt-3 justify-content-center align-self-end">
-                    <p>تمام حقوق این سایت متعلق به بیا تو بند می باشد</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footerHtml"></div>
     </div>
 
 </body>

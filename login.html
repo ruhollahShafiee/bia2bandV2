@@ -40,48 +40,55 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
     
     <script src="js/utils.js"></script>
+    <script src="js/general.js"></script>
     <script src="js/login.js"></script>
     <title>Bia2Band</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light  navbar-custom nav">
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="#First">
-                <img class="pl-10" src="assets/icons/Bia2band1.svg" alt="bia2band">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <!-- Search icon could be added here using an input group or similar component -->
-                <div class='d-flex justify-content-end float-end nav-item'>
-                    <span role="img" aria-label="user" class="anticon anticon-user mx-2 text-lg"><svg
-                            viewBox="64 64 896 896" focusable="false" data-icon="user" width="1em" height="1em"
-                            fill="currentColor" aria-hidden="true">
-                            <path
-                                d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
-                            </path>
-                        </svg></span>
-                    <a class='nav-link mt-1' style="padding: 0;" href='register.html'>ثبت نام</a>
+    <div class="bg-white">
+        <div class="container mx-auto">
+            <nav class="navbar navbar-expand-lg navbar-light  navbar-custom nav">
+                <div class="container-fluid">
+        
+                    <a class="navbar-brand" href="index.html">
+                        <img class="pl-10" src="assets/images/samandehi.png"  height="40px" alt="bia2band">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+                        <!-- Search icon could be added here using an input group or similar component -->
+                        <div class='d-flex justify-content-end float-end nav-item'>
+                            <span role="img" aria-label="user" class="anticon anticon-user mx-2 text-lg"><svg
+                                    viewBox="64 64 896 896" focusable="false" data-icon="user" width="1em" height="1em"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                                    </path>
+                                </svg></span>
+                            <a class='nav-link mt-1' style="padding: 0;" href='register.html'>ثبت نام</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+        
+        
+        
+            </nav>
         </div>
-
-
-
-    </nav>
+    </div>
+    
+    
     <div class="container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8" id="root">
 
         <div class="row mt-4">
             <div class="col-md-4 mx-auto justify-content-center">
                 <div class="flex mb-5  d-flex justify-content-center">
-                    <img src="assets/icons/Bia2band1.svg" alt="guaranty-u-img" class="rounded-full" height="50"
+                    <img src="assets/images/samandehi.png" alt="guaranty-u-img" class="rounded-full" height="50"
                         loading="lazy">
                     <strong class="text-xl mt-2 ms-2">بیا توبند</strong>
                 </div>
@@ -89,10 +96,12 @@
                 <p class="-mt-3 text-slate-400  d-flex justify-content-center">لطفا شماره موبایل یا ایمیل خود را وارد
                     نمایید</p>
                 <div class="form-group">
+                    نام کاربری
                     <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
                         placeholder="نام کاربری">
                 </div>
                 <div class="form-group mt-5">
+                    رمز عبور
                     <input type="password" class="form-control" id="fpass" placeholder="رمز عبور">
                 </div>
 
@@ -109,69 +118,7 @@
 
             </div>
         </div>
-
-
-
-
-
-        <footer class="footer p-5 mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="d-flex">
-                                    <img src="assets/icons/Bia2band1.svg" alt="guaranty-u-img" class="rounded-full"
-                                        width="50" height="50" loading="lazy">
-                                    <strong class="text-xl mt-2 ms-2">بیا توبند</strong>
-                                </div>
-                            </div>
-                            <p class="text-xs text-slate-500 mt-4 px-5">
-                                توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر
-                                از
-                                بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند توضیح مختصر از بیا توبند ...
-                            </p>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-12 ">
-                                <i class="fa fa-location-dot text-gray-400">
-
-                                </i>
-                                <b class="text-xs text-slate-500 m-2">تهران , خیابان ولی عصر , پاسداران جنوبی , خیابان
-                                    مظفر , ساختمان شماره 17</b>
-                            </div>
-                            <div class="col-md-12 ">
-                                <i class="fa-solid fa-phone-flip text-gray-400"></i>
-                                <b class="text-xs text-slate-500 m-2">09125858595</b>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="col-md-2">
-                        <h5 class="text-xl mt-2">خدمات ما</h5>
-                        <ul class="list-disc text-slate-500">
-                            <li>راهنمای مشتریان</li>
-                            <li>ورود و ثبت نام</li>
-                            <li>بلاگ</li>
-                            <li>فروشگاه</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-1 mt-2">
-                        <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=523033&Code=HdOoeBhDJ84d5KJTkEPdv5Diaq1LGqdj'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=523033&Code=HdOoeBhDJ84d5KJTkEPdv5Diaq1LGqdj' alt='' style='cursor:pointer' code='HdOoeBhDJ84d5KJTkEPdv5Diaq1LGqdj'></a>
-                    </div>
-                    <div class="col-md-1 ms-5 mt-2">
-                        <img referrerpolicy='origin' id = 'rgvjjzpejxlzsizpesgtoeuk' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=371908&p=xlaojyoerfthpfvlobpdmcsi", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=371908&p=qftiyndtnbpdbsiylymaaqgw' />
-                    </div>
-                </div>
-                <hr>
-                <div class="row rounded  border-style-footer d-flex justify-content-center align-self-end">
-                    <div class="col-md-12 d-flex pt-3 justify-content-center align-self-end">
-                        <p>تمام حقوق این سایت متعلق به بیا تو بند می باشد</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <div id="footerHtml"></div>
     </div>
 
 </body>

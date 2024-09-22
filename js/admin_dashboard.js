@@ -3,7 +3,7 @@ function getListOfInvatedCode() {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -57,7 +57,7 @@ function getListOfInvatedCode() {
 function removeInvatedCode(id) {
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -84,7 +84,7 @@ function removeInvatedCode(id) {
 function updateInvaitedCode(id, maxUsedVal) {
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -113,7 +113,7 @@ function addInvatedCode(codeName, maxUsed) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -141,7 +141,7 @@ function getListOfUsers() {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -210,7 +210,7 @@ function notConfirm(aritstId){
     
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -234,7 +234,7 @@ function confirm(artistId){
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -260,7 +260,7 @@ function getListOfMediaOfArtist(artistId) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({

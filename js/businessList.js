@@ -3,7 +3,7 @@ function getAllBusinuss() {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        // location.href = 'login.html';
+        // location.href = 'index.html';
     }
 
 
@@ -29,7 +29,7 @@ function searchBusiness(keyword, city, category, completedProfile, sortByVisited
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        // location.href = 'login.html';
+        // location.href = 'index.html';
     }
 
 

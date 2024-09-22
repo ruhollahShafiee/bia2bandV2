@@ -201,7 +201,7 @@ function getProfileInformation() {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -309,7 +309,7 @@ function changeSelectedValue(thisObj) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	let url = "";
@@ -455,7 +455,7 @@ function updateQusstionAnser(questionId, have) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -527,7 +527,7 @@ function saveOrUpdateAnswerMute(questionId, anserId, isNew) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	let urlvar = "backend/api/answer/update/answer"
@@ -580,7 +580,7 @@ function saveOrUpdateAnswer(questionId, anserId, isNew) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	let urlvar = "backend/api/answer/update/answer"
@@ -866,7 +866,7 @@ function addExtraAnswer(thisObj, questionId) {
 function updateBackground(mediaId) {
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -891,7 +891,7 @@ function updateBackground(mediaId) {
 function updateProfile(mediaId) {
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -950,7 +950,7 @@ function updatePersonINfo(tagObj) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 	let data = {
 		"name": $("#userComplateName").val(),
@@ -984,7 +984,7 @@ function updateSocial(tagObj) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 	let data = {
 		"twitterLink": $("#twitterLink").val(),
@@ -1017,7 +1017,7 @@ function updateAboutMe(tagObj) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 	let data = {
 		"aboutMe": $("#aboutMesasas").val()
@@ -1107,7 +1107,7 @@ function addMedia2Answer(targetDiv, answerId, mediaId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -1141,7 +1141,7 @@ function addMedia2Answer(targetDiv, answerId, mediaId) {
 function deleteMediaFromAnswer(answer, mediaId) {
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -1172,7 +1172,7 @@ function deleteMediaFromSkill(skillId, mediaId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 	let data = {
 		"aboutMe": $("#aboutMesasas").val()
@@ -1228,7 +1228,7 @@ function addMedia2Skill(skillId, mediaId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -1316,7 +1316,7 @@ function updateMainSkill(thisOject) {
 	}
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -1339,7 +1339,7 @@ function updateMainSkill(thisOject) {
 function updateExtraDescription(tagObj) {
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 	let data = {
 		"extraDesc": $("#extraDescription").val()
@@ -1402,7 +1402,7 @@ function loadSkill(skillId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$('#mediasIdsId').val('[]');
@@ -1449,7 +1449,7 @@ function buildTemplateQuestion(categorId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -1565,7 +1565,7 @@ function fetchArtStyle(categoryId, instrumnetId, artStyleId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -1646,7 +1646,7 @@ function saveSkill(isNew) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({
@@ -1687,7 +1687,7 @@ function removeSkill(thisObject, skillId) {
 
 	let access_token = getCookie("access_token");
 	if (access_token == undefined || access_token == "" || access_token == null) {
-		location.href = 'login.html';
+		location.href = 'index.html';
 	}
 
 	$.ajax({

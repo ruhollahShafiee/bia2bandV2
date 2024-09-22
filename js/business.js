@@ -2,7 +2,7 @@ function addBusiness(tagObj) {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     let medias = JSON.parse(getCookie("profileMedia"));
@@ -50,7 +50,7 @@ function getBusiness() {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -215,7 +215,7 @@ function getAllBusinuss() {
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
 

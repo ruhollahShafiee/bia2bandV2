@@ -9,7 +9,7 @@ function removeInterseted(id){
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
@@ -33,7 +33,7 @@ function getAllInterested(){
 
     let access_token = getCookie("access_token");
     if (access_token == undefined || access_token == "" || access_token == null) {
-        location.href = 'login.html';
+        location.href = 'index.html';
     }
 
     $.ajax({
